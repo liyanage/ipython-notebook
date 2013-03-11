@@ -1,0 +1,1036 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		1B28582516D69F4C000E80C6 /* libfreetype2 */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1B28582616D69F4C000E80C6 /* Build configuration list for PBXAggregateTarget "libfreetype2" */;
+			buildPhases = (
+				1B28582916D69F59000E80C6 /* Build libfreetype2 */,
+			);
+			dependencies = (
+			);
+			name = libfreetype2;
+			productName = libfreetype;
+		};
+		1B355BFD16DDD843001C25E4 /* Distribution */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1B355BFE16DDD843001C25E4 /* Build configuration list for PBXAggregateTarget "Distribution" */;
+			buildPhases = (
+				1B355C0316DDD84F001C25E4 /* Package Distribution */,
+			);
+			dependencies = (
+				1B355C0216DDD849001C25E4 /* PBXTargetDependency */,
+			);
+			name = Distribution;
+			productName = Distribution;
+		};
+		1B4E819116C8663000D174F2 /* Build_VirtualEnv */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1B4E819216C8663100D174F2 /* Build configuration list for PBXAggregateTarget "Build_VirtualEnv" */;
+			buildPhases = (
+				1B4E819716C8665200D174F2 /* Build iPython virtualenv */,
+			);
+			dependencies = (
+				1B943E6416E86B4600218E60 /* PBXTargetDependency */,
+				1B44242816D6C8FA0053B75D /* PBXTargetDependency */,
+				1B1ACEF616D6050D00F6E044 /* PBXTargetDependency */,
+			);
+			name = Build_VirtualEnv;
+			productName = "Build VirtualEnv";
+		};
+		1B9ECD3616E7C16D004627D0 /* opencv */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1B9ECD3716E7C16D004627D0 /* Build configuration list for PBXAggregateTarget "opencv" */;
+			buildPhases = (
+				1B9ECD3A16E7C182004627D0 /* ShellScript */,
+			);
+			dependencies = (
+				1B943E6616E86B5500218E60 /* PBXTargetDependency */,
+			);
+			name = opencv;
+			productName = OpenCV;
+		};
+		1BF40D8716D5F75F00D4FDEB /* libpng */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1BF40D8816D5F75F00D4FDEB /* Build configuration list for PBXAggregateTarget "libpng" */;
+			buildPhases = (
+				1BF40D8B16D5F77200D4FDEB /* Build libpng */,
+			);
+			dependencies = (
+			);
+			name = libpng;
+			productName = libpng;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1B0182C416D8608D00D1C925 /* BookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF026C16D7D0EA00ED3FC4 /* BookmarksViewController.m */; };
+		1B1ACEF816D605EB00F6E044 /* libpng.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1ACEF716D605EB00F6E044 /* libpng.dylib */; };
+		1B28585716D6B8CB000E80C6 /* libpng.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B1ACEF716D605EB00F6E044 /* libpng.dylib */; };
+		1B28585816D6B8CC000E80C6 /* libpng15.15.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1BF06A9716D60AA1008A73AB /* libpng15.15.dylib */; };
+		1B28585916D6B8CE000E80C6 /* libpng15.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1BF06A9816D60AA1008A73AB /* libpng15.dylib */; };
+		1B28585A16D6B8D0000E80C6 /* libfreetype.6.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B28585516D6B89B000E80C6 /* libfreetype.6.dylib */; };
+		1B28585B16D6B8D3000E80C6 /* libfreetype.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B28585616D6B89B000E80C6 /* libfreetype.dylib */; };
+		1B28585E16D6C01E000E80C6 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B28585C16D6C01E000E80C6 /* Credits.rtf */; };
+		1B355BF816DDB742001C25E4 /* com.andymatuschak.Sparkle.SandboxService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 1BB34DBF16DC8DF800E5F0B7 /* com.andymatuschak.Sparkle.SandboxService.xpc */; };
+		1B355C0516DDE6B6001C25E4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 1B355C0416DDE6B6001C25E4 /* dsa_pub.pem */; };
+		1B40505516C2036400AC636C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B40505416C2036400AC636C /* Cocoa.framework */; };
+		1B40505F16C2036400AC636C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B40505D16C2036400AC636C /* InfoPlist.strings */; };
+		1B40506116C2036400AC636C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B40506016C2036400AC636C /* main.m */; };
+		1B40506816C2036400AC636C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B40506716C2036400AC636C /* AppDelegate.m */; };
+		1B40506B16C2036500AC636C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B40506916C2036500AC636C /* MainMenu.xib */; };
+		1B40507316C2041D00AC636C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B40507116C203D700AC636C /* WebKit.framework */; };
+		1B4E81D816C9990E00D174F2 /* mime.types in Resources */ = {isa = PBXBuildFile; fileRef = 1B4E81D716C9990E00D174F2 /* mime.types */; };
+		1B532E2F16D55AB400CB6A0C /* iPython Notebook.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B532E2E16D55AB400CB6A0C /* iPython Notebook.icns */; };
+		1B74002516D9B2060014A3BE /* BookmarksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B74002316D9B2060014A3BE /* BookmarksViewController.xib */; };
+		1B7F41E516E4685800E21851 /* IPython Notebook Document.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B7F41E416E4685800E21851 /* IPython Notebook Document.icns */; };
+		1B7F41F216E5187300E21851 /* NotebookWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F41F016E5187300E21851 /* NotebookWindowController.m */; };
+		1B7F41F316E5187300E21851 /* NotebookWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7F41F116E5187300E21851 /* NotebookWindowController.xib */; };
+		1B9ECD3216E6B5C8004627D0 /* libgfortran.2.0.0.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B9ECD2F16E6B580004627D0 /* libgfortran.2.0.0.dylib */; };
+		1B9ECD3316E6B5C8004627D0 /* libgfortran.2.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B9ECD3016E6B599004627D0 /* libgfortran.2.dylib */; };
+		1B9ECD3416E6B5C8004627D0 /* libgfortran.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B9ECD3116E6B5AF004627D0 /* libgfortran.dylib */; };
+		1BA33C1B16E9103A002BB23D /* PerformCloseInterceptingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA33C1A16E9103A002BB23D /* PerformCloseInterceptingView.m */; };
+		1BA33C2416ED213B002BB23D /* Welcome to IPython Notebook.ipynb in Resources */ = {isa = PBXBuildFile; fileRef = 1BA33C2216ED213B002BB23D /* Welcome to IPython Notebook.ipynb */; };
+		1BB34DC016DC8E2200E5F0B7 /* Sparkle.framework in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1BB34DB516DC8DF800E5F0B7 /* Sparkle.framework */; };
+		1BB34DC116DC8E6100E5F0B7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB34DB516DC8DF800E5F0B7 /* Sparkle.framework */; };
+		1BBB91FF16D3E11F00A1933A /* launch-ipython.py in Copy additional virtualenv content */ = {isa = PBXBuildFile; fileRef = 1B4E81D616C9787100D174F2 /* launch-ipython.py */; };
+		1BCFA23E16DF1EB40048505D /* DragDestinationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCFA23D16DF1EB40048505D /* DragDestinationView.m */; };
+		1BF020F916DFD67600F5B454 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BF020F816DFD67600F5B454 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B1ACEF516D6050D00F6E044 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B40504916C2036400AC636C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BF40D8716D5F75F00D4FDEB;
+			remoteInfo = libpng;
+		};
+		1B355C0116DDD849001C25E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B40504916C2036400AC636C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B40505016C2036400AC636C;
+			remoteInfo = "IPython Notebook";
+		};
+		1B44242716D6C8FA0053B75D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B40504916C2036400AC636C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B28582516D69F4C000E80C6;
+			remoteInfo = libfreetype;
+		};
+		1B943E6316E86B4600218E60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B40504916C2036400AC636C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B9ECD3616E7C16D004627D0;
+			remoteInfo = OpenCV;
+		};
+		1B943E6516E86B5500218E60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B40504916C2036400AC636C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BF40D8716D5F75F00D4FDEB;
+			remoteInfo = libpng;
+		};
+		1BA33C2516ED2BE5002BB23D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B40504916C2036400AC636C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B4E819116C8663000D174F2;
+			remoteInfo = Build_VirtualEnv;
+		};
+		1BB34DB416DC8DF800E5F0B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BB34DAB16DC8DF800E5F0B7 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+		1BB34DB616DC8DF800E5F0B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BB34DAB16DC8DF800E5F0B7 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
+			remoteInfo = "Sparkle Test App";
+		};
+		1BB34DB816DC8DF800E5F0B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BB34DAB16DC8DF800E5F0B7 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 612279D90DB5470200AB99EA;
+			remoteInfo = "Sparkle Unit Tests";
+		};
+		1BB34DBA16DC8DF800E5F0B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BB34DAB16DC8DF800E5F0B7 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
+			remoteInfo = BinaryDelta;
+		};
+		1BB34DBC16DC8DF800E5F0B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BB34DAB16DC8DF800E5F0B7 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55C14BB7136EEF1500649790;
+			remoteInfo = finish_installation;
+		};
+		1BB34DBE16DC8DF800E5F0B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BB34DAB16DC8DF800E5F0B7 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8B887B5E1517F3AB000BB292;
+			remoteInfo = sandbox_service;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1B1ACEF916D6066300F6E044 /* Embed frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1BB34DC016DC8E2200E5F0B7 /* Sparkle.framework in Embed frameworks */,
+				1B28585716D6B8CB000E80C6 /* libpng.dylib in Embed frameworks */,
+				1B28585816D6B8CC000E80C6 /* libpng15.15.dylib in Embed frameworks */,
+				1B28585916D6B8CE000E80C6 /* libpng15.dylib in Embed frameworks */,
+				1B28585A16D6B8D0000E80C6 /* libfreetype.6.dylib in Embed frameworks */,
+				1B28585B16D6B8D3000E80C6 /* libfreetype.dylib in Embed frameworks */,
+				1B9ECD3216E6B5C8004627D0 /* libgfortran.2.0.0.dylib in Embed frameworks */,
+				1B9ECD3316E6B5C8004627D0 /* libgfortran.2.dylib in Embed frameworks */,
+				1B9ECD3416E6B5C8004627D0 /* libgfortran.dylib in Embed frameworks */,
+			);
+			name = "Embed frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B355BF116DDB716001C25E4 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/XPCServices;
+			dstSubfolderSpec = 1;
+			files = (
+				1B355BF816DDB742001C25E4 /* com.andymatuschak.Sparkle.SandboxService.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BBB91FE16D3E0FA00A1933A /* Copy additional virtualenv content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = virtualenv/bin;
+			dstSubfolderSpec = 7;
+			files = (
+				1BBB91FF16D3E11F00A1933A /* launch-ipython.py in Copy additional virtualenv content */,
+			);
+			name = "Copy additional virtualenv content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1B1ACEF716D605EB00F6E044 /* libpng.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng.dylib; path = libpng/lib/libpng.dylib; sourceTree = "<group>"; };
+		1B28582416D69F08000E80C6 /* build-libfreetype2.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-libfreetype2.sh"; sourceTree = "<group>"; };
+		1B28585516D6B89B000E80C6 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = libfreetype2/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
+		1B28585616D6B89B000E80C6 /* libfreetype.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.dylib; path = libfreetype2/lib/libfreetype.dylib; sourceTree = "<group>"; };
+		1B28585D16D6C01E000E80C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		1B3282EE16D9B91900858362 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		1B355BFC16DDD834001C25E4 /* package-distribution.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "package-distribution.sh"; sourceTree = "<group>"; };
+		1B355C0416DDE6B6001C25E4 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		1B40505116C2036400AC636C /* IPython Notebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IPython Notebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B40505416C2036400AC636C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1B40505716C2036400AC636C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		1B40505816C2036400AC636C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1B40505916C2036400AC636C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1B40505C16C2036400AC636C /* IPython Notebook-Info.plist */ = {isa = PBXFileReference; explicitFileType = text.xml; path = "IPython Notebook-Info.plist"; sourceTree = "<group>"; };
+		1B40505E16C2036400AC636C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1B40506016C2036400AC636C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1B40506216C2036400AC636C /* IPython Notebook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IPython Notebook-Prefix.pch"; sourceTree = "<group>"; };
+		1B40506616C2036400AC636C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1B40506716C2036400AC636C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1B40506A16C2036500AC636C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1B40507116C203D700AC636C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		1B40507416C204FC00AC636C /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		1B40507616C2054900AC636C /* IPython Notebook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "IPython Notebook.entitlements"; sourceTree = "<group>"; };
+		1B4E818E16C8647F00D174F2 /* create-ipython-virtualenv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "create-ipython-virtualenv.sh"; sourceTree = "<group>"; };
+		1B4E81D616C9787100D174F2 /* launch-ipython.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "launch-ipython.py"; sourceTree = "<group>"; };
+		1B4E81D716C9990E00D174F2 /* mime.types */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mime.types; path = /etc/apache2/mime.types; sourceTree = "<absolute>"; };
+		1B532E2E16D55AB400CB6A0C /* iPython Notebook.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "iPython Notebook.icns"; sourceTree = "<group>"; };
+		1B5AE92B16DD6A8400147B14 /* libpng15.15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng15.15.dylib; path = libpng/lib/libpng15.15.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B74002416D9B2060014A3BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BookmarksViewController.xib; sourceTree = "<group>"; };
+		1B7F41E416E4685800E21851 /* IPython Notebook Document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "IPython Notebook Document.icns"; sourceTree = "<group>"; };
+		1B7F41EF16E5187300E21851 /* NotebookWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookWindowController.h; sourceTree = "<group>"; };
+		1B7F41F016E5187300E21851 /* NotebookWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotebookWindowController.m; sourceTree = "<group>"; };
+		1B7F41F116E5187300E21851 /* NotebookWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotebookWindowController.xib; sourceTree = "<group>"; };
+		1B9ECD2F16E6B580004627D0 /* libgfortran.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgfortran.2.0.0.dylib; path = /usr/local/lib/libgfortran.2.0.0.dylib; sourceTree = "<absolute>"; };
+		1B9ECD3016E6B599004627D0 /* libgfortran.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgfortran.2.dylib; path = /usr/local/lib/libgfortran.2.dylib; sourceTree = "<absolute>"; };
+		1B9ECD3116E6B5AF004627D0 /* libgfortran.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgfortran.dylib; path = /usr/local/lib/libgfortran.dylib; sourceTree = "<absolute>"; };
+		1B9ECD3516E7339C004627D0 /* rewrite-dylib.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "rewrite-dylib.py"; sourceTree = "<group>"; };
+		1B9ECD3B16E7C279004627D0 /* build-opencv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-opencv.sh"; sourceTree = "<group>"; };
+		1BA33C1916E9103A002BB23D /* PerformCloseInterceptingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformCloseInterceptingView.h; sourceTree = "<group>"; };
+		1BA33C1A16E9103A002BB23D /* PerformCloseInterceptingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformCloseInterceptingView.m; sourceTree = "<group>"; };
+		1BA33C2316ED213B002BB23D /* en */ = {isa = PBXFileReference; explicitFileType = text.json; name = en; path = "en.lproj/Welcome to IPython Notebook.ipynb"; sourceTree = "<group>"; };
+		1BB34DAB16DC8DF800E5F0B7 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Sparkle.xcodeproj; sourceTree = "<group>"; };
+		1BCFA23C16DF1EB40048505D /* DragDestinationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDestinationView.h; sourceTree = "<group>"; };
+		1BCFA23D16DF1EB40048505D /* DragDestinationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDestinationView.m; sourceTree = "<group>"; };
+		1BEF026B16D7D0EA00ED3FC4 /* BookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarksViewController.h; sourceTree = "<group>"; };
+		1BEF026C16D7D0EA00ED3FC4 /* BookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarksViewController.m; sourceTree = "<group>"; };
+		1BF020F816DFD67600F5B454 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1BF06A9716D60AA1008A73AB /* libpng15.15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng15.15.dylib; path = libpng/lib/libpng15.15.dylib; sourceTree = "<group>"; };
+		1BF06A9816D60AA1008A73AB /* libpng15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng15.dylib; path = libpng/lib/libpng15.dylib; sourceTree = "<group>"; };
+		1BF40D8D16D5F88600D4FDEB /* build-libpng.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-libpng.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B40504E16C2036400AC636C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BF020F916DFD67600F5B454 /* QuartzCore.framework in Frameworks */,
+				1B40507316C2041D00AC636C /* WebKit.framework in Frameworks */,
+				1B40505516C2036400AC636C /* Cocoa.framework in Frameworks */,
+				1B1ACEF816D605EB00F6E044 /* libpng.dylib in Frameworks */,
+				1BB34DC116DC8E6100E5F0B7 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B3282ED16D9B91900858362 /* distribution */ = {
+			isa = PBXGroup;
+			children = (
+				1B355C0416DDE6B6001C25E4 /* dsa_pub.pem */,
+				1B355BFC16DDD834001C25E4 /* package-distribution.sh */,
+				1B3282EE16D9B91900858362 /* appcast.xml */,
+			);
+			path = distribution;
+			sourceTree = "<group>";
+		};
+		1B40504816C2036400AC636C = {
+			isa = PBXGroup;
+			children = (
+				1BF020F816DFD67600F5B454 /* QuartzCore.framework */,
+				1BB34DAA16DC8DE000E5F0B7 /* Sparkle */,
+				1B40505A16C2036400AC636C /* IPython Notebook */,
+				1B40505316C2036400AC636C /* Frameworks */,
+				1B40505216C2036400AC636C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B40505216C2036400AC636C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B40505116C2036400AC636C /* IPython Notebook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B40505316C2036400AC636C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B5AE92B16DD6A8400147B14 /* libpng15.15.dylib */,
+				1B1ACEF716D605EB00F6E044 /* libpng.dylib */,
+				1BF06A9716D60AA1008A73AB /* libpng15.15.dylib */,
+				1BF06A9816D60AA1008A73AB /* libpng15.dylib */,
+				1B28585516D6B89B000E80C6 /* libfreetype.6.dylib */,
+				1B28585616D6B89B000E80C6 /* libfreetype.dylib */,
+				1B9ECD2F16E6B580004627D0 /* libgfortran.2.0.0.dylib */,
+				1B9ECD3016E6B599004627D0 /* libgfortran.2.dylib */,
+				1B9ECD3116E6B5AF004627D0 /* libgfortran.dylib */,
+				1B40505416C2036400AC636C /* Cocoa.framework */,
+				1B40507416C204FC00AC636C /* Python.framework */,
+				1B40507116C203D700AC636C /* WebKit.framework */,
+				1B40505716C2036400AC636C /* AppKit.framework */,
+				1B40505816C2036400AC636C /* CoreData.framework */,
+				1B40505916C2036400AC636C /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B40505A16C2036400AC636C /* IPython Notebook */ = {
+			isa = PBXGroup;
+			children = (
+				1BAF1C0416E5307F00C6E7AA /* Notebook Controller */,
+				1BEF026A16D7D09900ED3FC4 /* Bookmarks Controller */,
+				1B40506616C2036400AC636C /* AppDelegate.h */,
+				1B40506716C2036400AC636C /* AppDelegate.m */,
+				1B40506916C2036500AC636C /* MainMenu.xib */,
+				1B40507616C2054900AC636C /* IPython Notebook.entitlements */,
+				1B4E81D616C9787100D174F2 /* launch-ipython.py */,
+				1B4E81D716C9990E00D174F2 /* mime.types */,
+				1B40505B16C2036400AC636C /* Supporting Files */,
+				1BF40D8C16D5F85D00D4FDEB /* build-support */,
+				1B3282ED16D9B91900858362 /* distribution */,
+			);
+			path = "IPython Notebook";
+			sourceTree = "<group>";
+		};
+		1B40505B16C2036400AC636C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1BA33C2216ED213B002BB23D /* Welcome to IPython Notebook.ipynb */,
+				1B28585C16D6C01E000E80C6 /* Credits.rtf */,
+				1B532E2E16D55AB400CB6A0C /* iPython Notebook.icns */,
+				1B7F41E416E4685800E21851 /* IPython Notebook Document.icns */,
+				1B40505C16C2036400AC636C /* IPython Notebook-Info.plist */,
+				1B40505D16C2036400AC636C /* InfoPlist.strings */,
+				1B40506016C2036400AC636C /* main.m */,
+				1B40506216C2036400AC636C /* IPython Notebook-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1BAF1C0416E5307F00C6E7AA /* Notebook Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B7F41EF16E5187300E21851 /* NotebookWindowController.h */,
+				1B7F41F016E5187300E21851 /* NotebookWindowController.m */,
+				1BA33C1916E9103A002BB23D /* PerformCloseInterceptingView.h */,
+				1BA33C1A16E9103A002BB23D /* PerformCloseInterceptingView.m */,
+				1B7F41F116E5187300E21851 /* NotebookWindowController.xib */,
+			);
+			path = "Notebook Controller";
+			sourceTree = "<group>";
+		};
+		1BB34DAA16DC8DE000E5F0B7 /* Sparkle */ = {
+			isa = PBXGroup;
+			children = (
+				1BB34DAB16DC8DF800E5F0B7 /* Sparkle.xcodeproj */,
+			);
+			path = Sparkle;
+			sourceTree = "<group>";
+		};
+		1BB34DAC16DC8DF800E5F0B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BB34DB516DC8DF800E5F0B7 /* Sparkle.framework */,
+				1BB34DB716DC8DF800E5F0B7 /* Sparkle Test App.app */,
+				1BB34DB916DC8DF800E5F0B7 /* Sparkle Unit Tests.octest */,
+				1BB34DBB16DC8DF800E5F0B7 /* BinaryDelta */,
+				1BB34DBD16DC8DF800E5F0B7 /* finish_installation.app */,
+				1BB34DBF16DC8DF800E5F0B7 /* com.andymatuschak.Sparkle.SandboxService.xpc */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BEF026A16D7D09900ED3FC4 /* Bookmarks Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1BEF026B16D7D0EA00ED3FC4 /* BookmarksViewController.h */,
+				1BEF026C16D7D0EA00ED3FC4 /* BookmarksViewController.m */,
+				1BCFA23C16DF1EB40048505D /* DragDestinationView.h */,
+				1BCFA23D16DF1EB40048505D /* DragDestinationView.m */,
+				1B74002316D9B2060014A3BE /* BookmarksViewController.xib */,
+			);
+			path = "Bookmarks Controller";
+			sourceTree = "<group>";
+		};
+		1BF40D8C16D5F85D00D4FDEB /* build-support */ = {
+			isa = PBXGroup;
+			children = (
+				1B9ECD3516E7339C004627D0 /* rewrite-dylib.py */,
+				1BF40D8D16D5F88600D4FDEB /* build-libpng.sh */,
+				1B28582416D69F08000E80C6 /* build-libfreetype2.sh */,
+				1B9ECD3B16E7C279004627D0 /* build-opencv.sh */,
+				1B4E818E16C8647F00D174F2 /* create-ipython-virtualenv.sh */,
+			);
+			path = "build-support";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B40505016C2036400AC636C /* IPython Notebook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B40506E16C2036500AC636C /* Build configuration list for PBXNativeTarget "IPython Notebook" */;
+			buildPhases = (
+				1B40504D16C2036400AC636C /* Sources */,
+				1B40504E16C2036400AC636C /* Frameworks */,
+				1B40504F16C2036400AC636C /* Resources */,
+				1B0182C316D8501500D1C925 /* Embed Python virtualenv */,
+				1BBB91FE16D3E0FA00A1933A /* Copy additional virtualenv content */,
+				1B1ACEF916D6066300F6E044 /* Embed frameworks */,
+				1B943E6216E8474B00218E60 /* Embed OpenCV frameworks */,
+				1B355BF116DDB716001C25E4 /* Embed XPC Services */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BA33C2616ED2BE5002BB23D /* PBXTargetDependency */,
+			);
+			name = "IPython Notebook";
+			productName = "IPython Notebook";
+			productReference = 1B40505116C2036400AC636C /* IPython Notebook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B40504916C2036400AC636C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Marc Liyanage";
+				TargetAttributes = {
+					1B40505016C2036400AC636C = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 1B40504C16C2036400AC636C /* Build configuration list for PBXProject "IPython Notebook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1B40504816C2036400AC636C;
+			productRefGroup = 1B40505216C2036400AC636C /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1BB34DAC16DC8DF800E5F0B7 /* Products */;
+					ProjectRef = 1BB34DAB16DC8DF800E5F0B7 /* Sparkle.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1BF40D8716D5F75F00D4FDEB /* libpng */,
+				1B28582516D69F4C000E80C6 /* libfreetype2 */,
+				1B9ECD3616E7C16D004627D0 /* opencv */,
+				1B4E819116C8663000D174F2 /* Build_VirtualEnv */,
+				1B40505016C2036400AC636C /* IPython Notebook */,
+				1B355BFD16DDD843001C25E4 /* Distribution */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1BB34DB516DC8DF800E5F0B7 /* Sparkle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sparkle.framework;
+			remoteRef = 1BB34DB416DC8DF800E5F0B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BB34DB716DC8DF800E5F0B7 /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = 1BB34DB616DC8DF800E5F0B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BB34DB916DC8DF800E5F0B7 /* Sparkle Unit Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Sparkle Unit Tests.octest";
+			remoteRef = 1BB34DB816DC8DF800E5F0B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BB34DBB16DC8DF800E5F0B7 /* BinaryDelta */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BinaryDelta;
+			remoteRef = 1BB34DBA16DC8DF800E5F0B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BB34DBD16DC8DF800E5F0B7 /* finish_installation.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = finish_installation.app;
+			remoteRef = 1BB34DBC16DC8DF800E5F0B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1BB34DBF16DC8DF800E5F0B7 /* com.andymatuschak.Sparkle.SandboxService.xpc */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = com.andymatuschak.Sparkle.SandboxService.xpc;
+			remoteRef = 1BB34DBE16DC8DF800E5F0B7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B40504F16C2036400AC636C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B40505F16C2036400AC636C /* InfoPlist.strings in Resources */,
+				1B28585E16D6C01E000E80C6 /* Credits.rtf in Resources */,
+				1B40506B16C2036500AC636C /* MainMenu.xib in Resources */,
+				1B4E81D816C9990E00D174F2 /* mime.types in Resources */,
+				1B532E2F16D55AB400CB6A0C /* iPython Notebook.icns in Resources */,
+				1B74002516D9B2060014A3BE /* BookmarksViewController.xib in Resources */,
+				1B355C0516DDE6B6001C25E4 /* dsa_pub.pem in Resources */,
+				1B7F41E516E4685800E21851 /* IPython Notebook Document.icns in Resources */,
+				1B7F41F316E5187300E21851 /* NotebookWindowController.xib in Resources */,
+				1BA33C2416ED213B002BB23D /* Welcome to IPython Notebook.ipynb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B0182C316D8501500D1C925 /* Embed Python virtualenv */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/virtualenv",
+			);
+			name = "Embed Python virtualenv";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/virtualenv",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -x\nrsync -aqP \"$SCRIPT_INPUT_FILE_0/\" \"$SCRIPT_OUTPUT_FILE_0/\"\ntouch \"$SCRIPT_OUTPUT_FILE_0/\"\ncodesign --force -s \"$CODE_SIGN_IDENTITY\" \"$SCRIPT_OUTPUT_FILE_0/\"bin/python\n";
+		};
+		1B28582916D69F59000E80C6 /* Build libfreetype2 */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/iPython Notebook/build-support/build-$(PRODUCT_NAME).sh",
+			);
+			name = "Build libfreetype2";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(PRODUCT_NAME)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"$SCRIPT_INPUT_FILE_0\"";
+		};
+		1B355C0316DDD84F001C25E4 /* Package Distribution */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Package Distribution";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "bash \"$SRCROOT/IPython Notebook\"/distribution/package-distribution.sh";
+			showEnvVarsInLog = 0;
+		};
+		1B4E819716C8665200D174F2 /* Build iPython virtualenv */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/iPython Notebook/build-support/create-ipython-virtualenv.sh",
+				"$(BUILT_PRODUCTS_DIR)/libpng",
+				"$(BUILT_PRODUCTS_DIR)/libfreetype2",
+				"$(BUILT_PRODUCTS_DIR)/opencv",
+			);
+			name = "Build iPython virtualenv";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(PRODUCT_NAME)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"$SCRIPT_INPUT_FILE_0\"";
+		};
+		1B943E6216E8474B00218E60 /* Embed OpenCV frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/opencv",
+			);
+			name = "Embed OpenCV frameworks";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rsync -aP \"$SCRIPT_INPUT_FILE_0\"/lib/lib*.dylib \"$SCRIPT_OUTPUT_FILE_0\"/\npython \"$SRCROOT/IPython Notebook/build-support/rewrite-dylib.py\" \"$SCRIPT_OUTPUT_FILE_0\"\n";
+		};
+		1B9ECD3A16E7C182004627D0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/iPython Notebook/build-support/build-$(PRODUCT_NAME).sh",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(PRODUCT_NAME)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"$SCRIPT_INPUT_FILE_0\"";
+		};
+		1BF40D8B16D5F77200D4FDEB /* Build libpng */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/iPython Notebook/build-support/build-$(PRODUCT_NAME).sh",
+			);
+			name = "Build libpng";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(PRODUCT_NAME)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "sh \"$SCRIPT_INPUT_FILE_0\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B40504D16C2036400AC636C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0182C416D8608D00D1C925 /* BookmarksViewController.m in Sources */,
+				1B40506116C2036400AC636C /* main.m in Sources */,
+				1B40506816C2036400AC636C /* AppDelegate.m in Sources */,
+				1BCFA23E16DF1EB40048505D /* DragDestinationView.m in Sources */,
+				1B7F41F216E5187300E21851 /* NotebookWindowController.m in Sources */,
+				1BA33C1B16E9103A002BB23D /* PerformCloseInterceptingView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B1ACEF616D6050D00F6E044 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BF40D8716D5F75F00D4FDEB /* libpng */;
+			targetProxy = 1B1ACEF516D6050D00F6E044 /* PBXContainerItemProxy */;
+		};
+		1B355C0216DDD849001C25E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B40505016C2036400AC636C /* IPython Notebook */;
+			targetProxy = 1B355C0116DDD849001C25E4 /* PBXContainerItemProxy */;
+		};
+		1B44242816D6C8FA0053B75D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B28582516D69F4C000E80C6 /* libfreetype2 */;
+			targetProxy = 1B44242716D6C8FA0053B75D /* PBXContainerItemProxy */;
+		};
+		1B943E6416E86B4600218E60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B9ECD3616E7C16D004627D0 /* opencv */;
+			targetProxy = 1B943E6316E86B4600218E60 /* PBXContainerItemProxy */;
+		};
+		1B943E6616E86B5500218E60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BF40D8716D5F75F00D4FDEB /* libpng */;
+			targetProxy = 1B943E6516E86B5500218E60 /* PBXContainerItemProxy */;
+		};
+		1BA33C2616ED2BE5002BB23D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B4E819116C8663000D174F2 /* Build_VirtualEnv */;
+			targetProxy = 1BA33C2516ED2BE5002BB23D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B28585C16D6C01E000E80C6 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B28585D16D6C01E000E80C6 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		1B40505D16C2036400AC636C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B40505E16C2036400AC636C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1B40506916C2036500AC636C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B40506A16C2036500AC636C /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		1B74002316D9B2060014A3BE /* BookmarksViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B74002416D9B2060014A3BE /* en */,
+			);
+			name = BookmarksViewController.xib;
+			sourceTree = "<group>";
+		};
+		1BA33C2216ED213B002BB23D /* Welcome to IPython Notebook.ipynb */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1BA33C2316ED213B002BB23D /* en */,
+			);
+			name = "Welcome to IPython Notebook.ipynb";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B28582716D69F4C000E80C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1B28582816D69F4C000E80C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1B355BFF16DDD843001C25E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "IPython Notebook";
+			};
+			name = Debug;
+		};
+		1B355C0016DDD843001C25E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "IPython Notebook";
+			};
+			name = Release;
+		};
+		1B40506C16C2036500AC636C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.3;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PROJECT_TEMP_DIR = "$(OBJROOT)/iPython_Notebook.build";
+				SDKROOT = macosx10.8;
+				SU_FEED_URL = "http://127.0.0.1:3000/appcast.xml";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		1B40506D16C2036500AC636C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1.3;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PROJECT_TEMP_DIR = "$(OBJROOT)/iPython_Notebook.build";
+				SDKROOT = macosx10.8;
+				SU_FEED_URL = "http://cdn.entropy.ch/software/ipython-notebook/appcast.xml";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		1B40506F16C2036500AC636C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "IPython Notebook/IPython Notebook.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application: Marc Liyanage";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IPython Notebook/IPython Notebook-Prefix.pch";
+				INFOPLIST_FILE = "IPython Notebook/IPython Notebook-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/libpng/lib",
+					"$(BUILT_PRODUCTS_DIR)/libfreetype2/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1B40507016C2036500AC636C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "IPython Notebook/IPython Notebook.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application: Marc Liyanage";
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IPython Notebook/IPython Notebook-Prefix.pch";
+				INFOPLIST_FILE = "IPython Notebook/IPython Notebook-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILT_PRODUCTS_DIR)/libpng/lib",
+					"$(BUILT_PRODUCTS_DIR)/libfreetype2/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1B4E819316C8663100D174F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = virtualenv;
+			};
+			name = Debug;
+		};
+		1B4E819416C8663100D174F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = virtualenv;
+			};
+			name = Release;
+		};
+		1B9ECD3816E7C16D004627D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1B9ECD3916E7C16D004627D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1BF40D8916D5F75F00D4FDEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1BF40D8A16D5F75F00D4FDEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B28582616D69F4C000E80C6 /* Build configuration list for PBXAggregateTarget "libfreetype2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B28582716D69F4C000E80C6 /* Debug */,
+				1B28582816D69F4C000E80C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B355BFE16DDD843001C25E4 /* Build configuration list for PBXAggregateTarget "Distribution" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B355BFF16DDD843001C25E4 /* Debug */,
+				1B355C0016DDD843001C25E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B40504C16C2036400AC636C /* Build configuration list for PBXProject "IPython Notebook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B40506C16C2036500AC636C /* Debug */,
+				1B40506D16C2036500AC636C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B40506E16C2036500AC636C /* Build configuration list for PBXNativeTarget "IPython Notebook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B40506F16C2036500AC636C /* Debug */,
+				1B40507016C2036500AC636C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B4E819216C8663100D174F2 /* Build configuration list for PBXAggregateTarget "Build_VirtualEnv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B4E819316C8663100D174F2 /* Debug */,
+				1B4E819416C8663100D174F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B9ECD3716E7C16D004627D0 /* Build configuration list for PBXAggregateTarget "opencv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B9ECD3816E7C16D004627D0 /* Debug */,
+				1B9ECD3916E7C16D004627D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BF40D8816D5F75F00D4FDEB /* Build configuration list for PBXAggregateTarget "libpng" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BF40D8916D5F75F00D4FDEB /* Debug */,
+				1BF40D8A16D5F75F00D4FDEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1B40504916C2036400AC636C /* Project object */;
+}

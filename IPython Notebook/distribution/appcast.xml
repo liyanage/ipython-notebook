@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss
+	xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	version="2.0">
+
+	<channel>
+		<title>IPython Notebook’s Changelog</title>
+		<link>http://cdn.entropy.ch/software/ipython-notebook/appcast.xml</link>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+
+		<item>
+			<title>Version 1.3</title>
+			<sparkle:releaseNotesLink>http://cdn.entropy.ch/software/ipython-notebook/release-notes.html#version-1.3</sparkle:releaseNotesLink>
+			<sparkle:minimumSystemVersion>10.8.2</sparkle:minimumSystemVersion>
+			<pubDate>Sun, 10 Mar 2013 23:57:05 -0700</pubDate>
+			<enclosure
+            url="http://cdn.entropy.ch/software/ipython-notebook/IPython Notebook 1.3.zip"
+            sparkle:version="1.3"
+            type="application/octet-stream"
+            length="91659134"
+            sparkle:dsaSignature="MCwCFEpqeywWPJpEfzlR9SczQSM6QT+pAhRTR/IwM+uA0MytHhDnvBntOvewDg=="
+			/>
+		</item>
+
+	</channel>
+</rss>
