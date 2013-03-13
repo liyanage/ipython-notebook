@@ -18,6 +18,6 @@ tar -xzf $TARBALL
 cd $SOURCEDIR
 rm -rf "$SCRIPT_OUTPUT_FILE_0"
 ./configure --prefix="$SCRIPT_OUTPUT_FILE_0"
-make install 2>/dev/null
+make -j $(sysctl hw.ncpu | awk '{print $2}') install 2>/dev/null
 install_name_tool -id "@rpath/libfreetype.dylib" "$SCRIPT_OUTPUT_FILE_0"/lib/libfreetype.dylib
 

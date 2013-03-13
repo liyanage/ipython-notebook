@@ -40,7 +40,7 @@ LIBPNG_INSTALL=$(dirname "$SCRIPT_OUTPUT_FILE_0")/libpng
 -D BUILD_PYTHON_SUPPORT=ON \
 ..
 
-make install
+make -j $(sysctl hw.ncpu | awk '{print $2}') install
 
 touch "$SCRIPT_OUTPUT_FILE_0"
 

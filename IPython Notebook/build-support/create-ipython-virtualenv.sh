@@ -66,7 +66,7 @@ export CXX=clang
 pip install nose
 
 # Install modules - scientific
-pip install numpy > "$CONFIGURATION_TEMP_DIR"/install-scipy.log
+pip install numpy > "$CONFIGURATION_TEMP_DIR"/install-numpy.log
 #python <<EOF
 #import numpy
 #numpy.test('full')
