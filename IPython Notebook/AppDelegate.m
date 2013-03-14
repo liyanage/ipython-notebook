@@ -20,6 +20,7 @@
 - (void)awakeFromNib
 {
 	self.notebookController = [[NotebookWindowController alloc] initWithWindowNibName:@"NotebookWindowController"];
+    self.notebookController.pythonPathURLs = [self.pythonPathBookmarksViewController bookmarkURLs];
 }
 
 
@@ -31,9 +32,16 @@
 
 - (IBAction)openPreferencesWindow:(id)sender
 {
-	if (![self.bookmarksViewController.view superview]) {
-		NSView *bookmarksView = self.bookmarksViewController.view;
-		[self.bookmarksPlaceholderView addSubview:bookmarksView];
+    BookmarksViewController *bvc = self.bookmarksViewController;
+	if (![bvc.view superview]) {
+		[self.bookmarksPlaceholderView addSubview:bvc.view];
+	}
+    
+    bvc = self.pythonPathBookmarksViewController;
+	if (![bvc.view superview]) {
+		[self.pythonPathBookmarksPlaceholderView addSubview:bvc.view];
+        bvc.labelText = NSLocalizedString(@"Add the following folders to the PYTHONPATH", nil);
+        bvc.dragExplanationText = NSLocalizedString(@"Drag folders to this list. Changes require a restart.", nil);
 	}
 	[self.preferencesWindow makeKeyAndOrderFront:sender];
 }

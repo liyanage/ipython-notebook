@@ -1335,30 +1335,33 @@
 			<object class="NSWindowTemplate" id="630837381">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{283, 305}, {518, 287}}</string>
+				<string key="NSWindowRect">{{283, 305}, {570, 370}}</string>
 				<int key="NSWTFlags">1685586944</int>
 				<string key="NSWindowTitle">Preferences</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
-				<string key="NSWindowContentMinSize">{569, 234}</string>
+				<string key="NSWindowContentMinSize">{570, 370}</string>
 				<object class="NSView" key="NSWindowView" id="215841164">
-					<nil key="NSNextResponder"/>
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSCustomView" id="374140751">
 							<reference key="NSNextResponder" ref="215841164"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{20, 20}, {478, 203}}</string>
+							<string key="NSFrame">{{20, 141}, {530, 165}}</string>
 							<reference key="NSSuperview" ref="215841164"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="913538797"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSClassName">NSView</string>
 						</object>
 						<object class="NSButton" id="639523194">
 							<reference key="NSNextResponder" ref="215841164"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{18, 251}, {482, 18}}</string>
+							<string key="NSFrame">{{18, 334}, {534, 18}}</string>
 							<reference key="NSSuperview" ref="215841164"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="894333839"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
@@ -1392,8 +1395,9 @@
 						<object class="NSBox" id="894333839">
 							<reference key="NSNextResponder" ref="215841164"/>
 							<int key="NSvFlags">12</int>
-							<string key="NSFrame">{{20, 234}, {478, 5}}</string>
+							<string key="NSFrame">{{20, 317}, {530, 5}}</string>
 							<reference key="NSSuperview" ref="215841164"/>
+							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="374140751"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<string key="NSOffsets">{0, 0}</string>
@@ -1421,13 +1425,24 @@
 							<int key="NSTitlePosition">0</int>
 							<bool key="NSTransparent">NO</bool>
 						</object>
+						<object class="NSCustomView" id="913538797">
+							<reference key="NSNextResponder" ref="215841164"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{20, 20}, {530, 105}}</string>
+							<reference key="NSSuperview" ref="215841164"/>
+							<reference key="NSWindow"/>
+							<string key="NSReuseIdentifierKey">_NS:9</string>
+							<string key="NSClassName">NSView</string>
+						</object>
 					</array>
-					<string key="NSFrameSize">{518, 287}</string>
+					<string key="NSFrameSize">{570, 370}</string>
+					<reference key="NSSuperview"/>
+					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="639523194"/>
 					<string key="NSReuseIdentifierKey">_NS:20</string>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1576, 819}}</string>
-				<string key="NSMinSize">{569, 256}</string>
+				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
+				<string key="NSMinSize">{570, 392}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">NO</bool>
 			</object>
@@ -1439,6 +1454,10 @@
 			</object>
 			<object class="NSCustomObject" id="646890774">
 				<string key="NSClassName">SUUpdater</string>
+			</object>
+			<object class="NSViewController" id="778896317">
+				<string key="NSNibName">BookmarksViewController</string>
+				<string key="NSTitle">PYTHONPATH Bookmarks View</string>
 			</object>
 			<object class="NSViewController" id="655653048">
 				<string key="NSNibName">BookmarksViewController</string>
@@ -2166,6 +2185,22 @@
 						<reference key="destination" ref="655653048"/>
 					</object>
 					<int key="connectionID">806</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">pythonPathBookmarksPlaceholderView</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="913538797"/>
+					</object>
+					<int key="connectionID">827</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">pythonPathBookmarksViewController</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="778896317"/>
+					</object>
+					<int key="connectionID">828</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -3191,6 +3226,86 @@
 						<int key="objectID">563</int>
 						<reference key="object" ref="215841164"/>
 						<array class="NSMutableArray" key="children">
+							<object class="IBNSLayoutConstraint" id="195415201">
+								<reference key="firstItem" ref="913538797"/>
+								<int key="firstAttribute">3</int>
+								<int key="relation">0</int>
+								<reference key="secondItem" ref="374140751"/>
+								<int key="secondAttribute">4</int>
+								<float key="multiplier">1</float>
+								<object class="IBLayoutConstant" key="constant">
+									<double key="value">16</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="215841164"/>
+								<int key="scoringType">9</int>
+								<float key="scoringTypeFloat">40</float>
+								<int key="contentType">3</int>
+							</object>
+							<object class="IBNSLayoutConstraint" id="703527753">
+								<reference key="firstItem" ref="215841164"/>
+								<int key="firstAttribute">4</int>
+								<int key="relation">0</int>
+								<reference key="secondItem" ref="913538797"/>
+								<int key="secondAttribute">4</int>
+								<float key="multiplier">1</float>
+								<object class="IBNSLayoutSymbolicConstant" key="constant">
+									<double key="value">20</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="215841164"/>
+								<int key="scoringType">9</int>
+								<float key="scoringTypeFloat">40</float>
+								<int key="contentType">3</int>
+							</object>
+							<object class="IBNSLayoutConstraint" id="913891670">
+								<reference key="firstItem" ref="913538797"/>
+								<int key="firstAttribute">5</int>
+								<int key="relation">0</int>
+								<reference key="secondItem" ref="215841164"/>
+								<int key="secondAttribute">5</int>
+								<float key="multiplier">1</float>
+								<object class="IBNSLayoutSymbolicConstant" key="constant">
+									<double key="value">20</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="215841164"/>
+								<int key="scoringType">8</int>
+								<float key="scoringTypeFloat">29</float>
+								<int key="contentType">3</int>
+							</object>
+							<object class="IBNSLayoutConstraint" id="1002288539">
+								<reference key="firstItem" ref="215841164"/>
+								<int key="firstAttribute">6</int>
+								<int key="relation">0</int>
+								<reference key="secondItem" ref="913538797"/>
+								<int key="secondAttribute">6</int>
+								<float key="multiplier">1</float>
+								<object class="IBNSLayoutSymbolicConstant" key="constant">
+									<double key="value">20</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="215841164"/>
+								<int key="scoringType">8</int>
+								<float key="scoringTypeFloat">29</float>
+								<int key="contentType">3</int>
+							</object>
+							<object class="IBNSLayoutConstraint" id="941680208">
+								<reference key="firstItem" ref="215841164"/>
+								<int key="firstAttribute">4</int>
+								<int key="relation">0</int>
+								<reference key="secondItem" ref="374140751"/>
+								<int key="secondAttribute">4</int>
+								<float key="multiplier">1</float>
+								<object class="IBLayoutConstant" key="constant">
+									<double key="value">141</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="215841164"/>
+								<int key="scoringType">9</int>
+								<float key="scoringTypeFloat">40</float>
+								<int key="contentType">3</int>
+							</object>
 							<object class="IBNSLayoutConstraint" id="425958781">
 								<reference key="firstItem" ref="374140751"/>
 								<int key="firstAttribute">3</int>
@@ -3205,22 +3320,6 @@
 								<reference key="containingView" ref="215841164"/>
 								<int key="scoringType">3</int>
 								<float key="scoringTypeFloat">9</float>
-								<int key="contentType">3</int>
-							</object>
-							<object class="IBNSLayoutConstraint" id="387216124">
-								<reference key="firstItem" ref="215841164"/>
-								<int key="firstAttribute">4</int>
-								<int key="relation">0</int>
-								<reference key="secondItem" ref="374140751"/>
-								<int key="secondAttribute">4</int>
-								<float key="multiplier">1</float>
-								<object class="IBNSLayoutSymbolicConstant" key="constant">
-									<double key="value">20</double>
-								</object>
-								<float key="priority">1000</float>
-								<reference key="containingView" ref="215841164"/>
-								<int key="scoringType">8</int>
-								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
 							<object class="IBNSLayoutConstraint" id="26954927">
@@ -3354,6 +3453,7 @@
 							<reference ref="639523194"/>
 							<reference ref="374140751"/>
 							<reference ref="894333839"/>
+							<reference ref="913538797"/>
 						</array>
 						<reference key="parent" ref="630837381"/>
 					</object>
@@ -3393,11 +3493,6 @@
 						<reference key="parent" ref="215841164"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">747</int>
-						<reference key="object" ref="165909777"/>
-						<reference key="parent" ref="215841164"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">772</int>
 						<reference key="object" ref="724522165"/>
 						<reference key="parent" ref="215841164"/>
@@ -3405,16 +3500,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">775</int>
 						<reference key="object" ref="938016693"/>
-						<reference key="parent" ref="215841164"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">776</int>
-						<reference key="object" ref="26954927"/>
-						<reference key="parent" ref="215841164"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">777</int>
-						<reference key="object" ref="387216124"/>
 						<reference key="parent" ref="215841164"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -3451,6 +3536,76 @@
 						<int key="objectID">805</int>
 						<reference key="object" ref="655653048"/>
 						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">815</int>
+						<reference key="object" ref="778896317"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">PYTHONPATH Bookmarks Controller</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">816</int>
+						<reference key="object" ref="913538797"/>
+						<array class="NSMutableArray" key="children">
+							<object class="IBNSLayoutConstraint" id="831365922">
+								<reference key="firstItem" ref="913538797"/>
+								<int key="firstAttribute">8</int>
+								<int key="relation">0</int>
+								<nil key="secondItem"/>
+								<int key="secondAttribute">0</int>
+								<float key="multiplier">1</float>
+								<object class="IBLayoutConstant" key="constant">
+									<double key="value">105</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="913538797"/>
+								<int key="scoringType">9</int>
+								<float key="scoringTypeFloat">40</float>
+								<int key="contentType">1</int>
+							</object>
+						</array>
+						<reference key="parent" ref="215841164"/>
+						<string key="objectName">Bookmarks Placeholder view</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">819</int>
+						<reference key="object" ref="913891670"/>
+						<reference key="parent" ref="215841164"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">826</int>
+						<reference key="object" ref="703527753"/>
+						<reference key="parent" ref="215841164"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">776</int>
+						<reference key="object" ref="26954927"/>
+						<reference key="parent" ref="215841164"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">818</int>
+						<reference key="object" ref="1002288539"/>
+						<reference key="parent" ref="215841164"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">747</int>
+						<reference key="object" ref="165909777"/>
+						<reference key="parent" ref="215841164"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">832</int>
+						<reference key="object" ref="831365922"/>
+						<reference key="parent" ref="913538797"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">833</int>
+						<reference key="object" ref="941680208"/>
+						<reference key="parent" ref="215841164"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">834</int>
+						<reference key="object" ref="195415201"/>
+						<reference key="parent" ref="215841164"/>
 					</object>
 				</array>
 			</object>
@@ -3594,7 +3749,7 @@
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="562.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="NO" key="562.NSWindowTemplate.visibleAtLaunch"/>
-				<array class="NSMutableArray" key="563.IBNSViewMetadataConstraints">
+				<array key="563.IBNSViewMetadataConstraints">
 					<reference ref="495361546"/>
 					<reference ref="165909777"/>
 					<reference ref="724522165"/>
@@ -3603,8 +3758,12 @@
 					<reference ref="556976200"/>
 					<reference ref="938016693"/>
 					<reference ref="26954927"/>
-					<reference ref="387216124"/>
 					<reference ref="425958781"/>
+					<reference ref="941680208"/>
+					<reference ref="1002288539"/>
+					<reference ref="913891670"/>
+					<reference ref="703527753"/>
+					<reference ref="195415201"/>
 				</array>
 				<string key="563.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3626,7 +3785,6 @@
 				<string key="772.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="775.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="776.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="777.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="78.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="NO" key="781.IBNSViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="781.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3637,38 +3795,70 @@
 				<string key="800.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="801.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="805.CustomClassName">BookmarksViewController</string>
+				<object class="NSMutableDictionary" key="805.IBAttributePlaceholdersKey">
+					<string key="NS.key.0">IBUserDefinedRuntimeAttributesPlaceholderName</string>
+					<object class="IBUserDefinedRuntimeAttributesPlaceholder" key="NS.object.0">
+						<string key="name">IBUserDefinedRuntimeAttributesPlaceholderName</string>
+						<reference key="object" ref="655653048"/>
+						<array key="userDefinedRuntimeAttributes">
+							<object class="IBUserDefinedRuntimeAttribute">
+								<string key="typeIdentifier">com.apple.InterfaceBuilder.userDefinedRuntimeAttributeType.string</string>
+								<string key="keyPath">userDefaultsContentKey</string>
+								<string key="value">fileSystemAccessBookmarks</string>
+							</object>
+						</array>
+					</object>
+				</object>
 				<string key="805.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="81.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="815.CustomClassName">BookmarksViewController</string>
+				<object class="NSMutableDictionary" key="815.IBAttributePlaceholdersKey">
+					<string key="NS.key.0">IBUserDefinedRuntimeAttributesPlaceholderName</string>
+					<object class="IBUserDefinedRuntimeAttributesPlaceholder" key="NS.object.0">
+						<string key="name">IBUserDefinedRuntimeAttributesPlaceholderName</string>
+						<reference key="object" ref="778896317"/>
+						<array key="userDefinedRuntimeAttributes">
+							<object class="IBUserDefinedRuntimeAttribute">
+								<string key="typeIdentifier">com.apple.InterfaceBuilder.userDefinedRuntimeAttributeType.string</string>
+								<string key="keyPath">userDefaultsContentKey</string>
+								<string key="value">pythonPathBookmarks</string>
+							</object>
+						</array>
+					</object>
+				</object>
+				<string key="815.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<array key="816.IBNSViewMetadataConstraints">
+					<reference ref="831365922"/>
+				</array>
+				<boolean value="NO" key="816.IBNSViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
+				<string key="816.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="818.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="819.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="82.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="826.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="83.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="832.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="833.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="834.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="92.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">812</int>
+			<int key="maxID">834</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">AppDelegate</string>
 					<string key="superclassName">NSObject</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">openPreferencesWindow:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">openPreferencesWindow:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">openPreferencesWindow:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="bookmarksPlaceholderView">NSView</string>
 						<string key="bookmarksViewController">BookmarksViewController</string>
 						<string key="preferencesWindow">NSWindow</string>
+						<string key="pythonPathBookmarksPlaceholderView">NSView</string>
+						<string key="pythonPathBookmarksViewController">BookmarksViewController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="bookmarksPlaceholderView">
@@ -3682,6 +3872,14 @@
 						<object class="IBToOneOutletInfo" key="preferencesWindow">
 							<string key="name">preferencesWindow</string>
 							<string key="candidateClassName">NSWindow</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pythonPathBookmarksPlaceholderView">
+							<string key="name">pythonPathBookmarksPlaceholderView</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="pythonPathBookmarksViewController">
+							<string key="name">pythonPathBookmarksViewController</string>
+							<string key="candidateClassName">BookmarksViewController</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">

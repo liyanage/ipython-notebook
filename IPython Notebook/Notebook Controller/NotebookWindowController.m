@@ -239,7 +239,13 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 	environment[@"IPYTHON_NOTEBOOK_APP_PORT"] = [portNumber stringValue];
 	environment[@"IPYTHON_NOTEBOOK_APP_IPYTHON_DIR"] = [self.documentDirectoryURL path];
 	environment[@"PYTHONDONTWRITEBYTECODE"] = @"1";
-	self.task.environment = environment;
+
+    NSString *pythonPath = [self customPythonPath];
+    if (pythonPath) {
+        environment[@"IPYTHON_NOTEBOOK_APP_EXTRA_PYTHONPATH"] = pythonPath;
+    }
+	
+    self.task.environment = environment;
 	
 	self.applicationState = ApplicationStateWaitingForNotebookStartup;
 	self.operationInProgress = YES;
@@ -248,6 +254,20 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 	self.notebookURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://127.0.0.1:%@", portNumber]];
 	return YES;
 }
+
+
+- (NSString *)customPythonPath
+{
+    if (![self.pythonPathURLs count]) {
+        return nil;
+    }
+    NSMutableArray *paths = [NSMutableArray array];
+    for (NSURL *url in self.pythonPathURLs) {
+        [paths addObject:[url path]];
+    }
+    return [paths componentsJoinedByString:@":"];
+}
+
 
 
 - (void)waitForNotebookServer

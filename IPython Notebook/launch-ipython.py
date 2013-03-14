@@ -11,6 +11,11 @@ import os
 port = os.environ['IPYTHON_NOTEBOOK_APP_PORT']
 ipython_dir = os.environ['IPYTHON_NOTEBOOK_APP_IPYTHON_DIR']
 
+extra_paths = os.environ.get('IPYTHON_NOTEBOOK_APP_EXTRA_PYTHONPATH')
+if extra_paths:
+    extra_paths = extra_paths.split(':')
+    sys.path.extend(extra_paths)
+
 # ipython help  notebook --help-all
 sys.argv = ['ipython', 'notebook', '--pylab', 'inline', '--no-browser', '--port={}'.format(port), '--ipython-dir={}'.format(ipython_dir), '--notebook-dir={}'.format(ipython_dir)]
 

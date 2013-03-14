@@ -12,6 +12,9 @@
 
 @property (weak) IBOutlet NSArrayController *bookmarksArrayController;
 @property (weak) IBOutlet NSTableView *bookmarksTableView;
+@property (strong) NSString *userDefaultsContentKey;
+@property (copy) NSString *labelText;
+@property (copy) NSString *dragExplanationText;
 
 - (IBAction)addBookmark:(id)sender;
 - (IBAction)removeBookmark:(id)sender;
@@ -19,5 +22,7 @@
 
 - (BOOL)addBookmarkEntriesForPaths:(NSArray *)paths;
 - (BOOL)addBookmarkEntriesForURLs:(NSArray *)urls;
+
+- (NSArray *)bookmarkURLs;
 
 @end

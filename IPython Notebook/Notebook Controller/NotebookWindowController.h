@@ -15,6 +15,7 @@
 
 @property (weak) IBOutlet NSView *firstTimeView;
 @property (weak) IBOutlet WebView *webView;
+@property (retain) NSArray *pythonPathURLs;
 @property (assign) BOOL operationInProgress;
 
 - (void)promptForImportOfNotebookDocuments:(NSArray *)notebookDocumentPaths;

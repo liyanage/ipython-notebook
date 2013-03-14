@@ -12,6 +12,11 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 @property (weak) IBOutlet NSWindow *preferencesWindow;
-@property (weak) IBOutlet NSView *bookmarksPlaceholderView;
+
 @property (strong) IBOutlet BookmarksViewController *bookmarksViewController;
+@property (weak) IBOutlet NSView *bookmarksPlaceholderView;
+
+@property (strong) IBOutlet BookmarksViewController *pythonPathBookmarksViewController;
+@property (weak) IBOutlet NSView *pythonPathBookmarksPlaceholderView;
+
 @end

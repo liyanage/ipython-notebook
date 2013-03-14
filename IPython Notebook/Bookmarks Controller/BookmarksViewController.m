@@ -16,20 +16,64 @@
 
 @implementation BookmarksViewController
 
-
 - (void)awakeFromNib
 {
-	[self startUsingPersistedBookmarks];
+    if (self.bookmarksArrayController) {
+        // view initialization
+        [self awakeFromNibView];
+    } else {
+        // bring in the models only
+        [self startUsingPersistedBookmarks];
+    }
+}
+
+
+- (void)awakeFromNibView
+{
+    NSString *keyPath = [self contentArrayUserDefaultsKeyPath];
+    if (!keyPath) {
+        return;
+    }
+    NSUserDefaultsController *udc = [NSUserDefaultsController sharedUserDefaultsController];
+    [self.bookmarksArrayController bind:@"contentArray" toObject:udc withKeyPath:keyPath options:nil];
 	[self.view registerForDraggedTypes:@[@"public.file-url"]];
 	[self.bookmarksTableView setTarget:self];
 	[self.bookmarksTableView setDoubleAction:@selector(doubleClickInTableView:)];
-
+    self.labelText = NSLocalizedString(@"Allow access to these files and folders", nil);
+    self.dragExplanationText = NSLocalizedString(@"Drag folders to this list or onto the application icon", nil);
 }
+
+
+- (NSString *)contentArrayUserDefaultsKeyPath
+{
+    if (!self.userDefaultsContentKey) {
+        NSLog(@"The userDefaultsContentKey property is not set");
+        return nil;
+    }
+    return [@"values." stringByAppendingString:self.userDefaultsContentKey];
+}
+
+
+- (id)contentArray
+{
+    NSString *keyPath = [self contentArrayUserDefaultsKeyPath];
+    if (!keyPath) {
+        return nil;
+    }
+    return [[NSUserDefaultsController sharedUserDefaultsController] valueForKeyPath:keyPath];
+}
+
+
+- (NSArray *)bookmarkURLs
+{
+    return [self.bookmarkPathToURLMap allValues];
+}
+
 
 - (void)startUsingPersistedBookmarks
 {
 	self.bookmarkPathToURLMap = [NSMutableDictionary dictionary];
-	for (NSDictionary *bookmarkInfo in self.bookmarksArrayController.arrangedObjects) {
+	for (NSDictionary *bookmarkInfo in [self contentArray]) {
 		NSData *bookmarkData = bookmarkInfo[@"bookmarkData"];
 		BOOL isStale = NO;
 		NSURL *url = [NSURL URLByResolvingBookmarkData:bookmarkData options:NSURLBookmarkResolutionWithSecurityScope relativeToURL:nil bookmarkDataIsStale:&isStale error:nil];
@@ -92,6 +136,9 @@
 
 - (BOOL)addBookmarkEntriesForURLs:(NSArray *)urls
 {
+    if (!self.bookmarksArrayController) {
+        [self loadView];
+    }
 	BOOL didAddSuccessfully = YES;
 	NSMutableArray *newEntries = [NSMutableArray array];
 	for (NSURL *url in urls) {
