@@ -47,6 +47,18 @@
 }
 
 
+- (IBAction)openProjectWebsite:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:[self projectInfoURL]];
+}
+
+
+- (NSURL *)projectInfoURL
+{
+    return [NSURL URLWithString:@"https://github.com/liyanage/ipython-notebook/wiki"];
+}
+
+
 #pragma mark - NSApplicationDelegate protocol implementation
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
