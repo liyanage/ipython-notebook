@@ -454,6 +454,9 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (BOOL)validateUserInterfaceItem:(id <NSValidatedUserInterfaceItem>)anItem
 {
+	if ([anItem action] == @selector(runCurrentCellInPlace:)) {
+		return [self currentPageIsNotebook];
+	}
 	if ([anItem action] == @selector(openNotebooksFolder:)) {
 		return self.documentDirectoryURL != nil;
 	}
@@ -530,6 +533,11 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 	completionHandler(returnCode);
 }
 
+
+- (IBAction)runCurrentCellInPlace:(id)sender
+{
+	[self evaluateWebScript:@"IPython.notebook.execute_selected_cell({terminal:true});"];
+}
 
 
 #pragma mark - JavaScript interaction
