@@ -140,7 +140,7 @@ find "$VIRTUALENV_DIR" -name '*.pyc' -delete
 install_name_tool -delete_rpath "$SCRIPT_INPUT_FILE_1"/lib "$VIRTUALENV_DIR"/bin/python
 install_name_tool -delete_rpath "$SCRIPT_INPUT_FILE_2"/lib "$VIRTUALENV_DIR"/bin/python
 
-# undo the effect of the '--no-site-packages'
+# undo the effect of the '--no-site-packages' option used during virtualenv creation
 rm "$VIRTUALENV_DIR"/lib/python2.7/no-global-site-packages.txt
 
 # rewrite dyld references pointing to non-system locations to use @rpath
