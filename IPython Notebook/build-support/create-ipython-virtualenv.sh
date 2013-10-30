@@ -81,7 +81,12 @@ pip install numpy > "$CONFIGURATION_TEMP_DIR"/install-numpy.log
 #numpy.test('full')
 #EOF
 
-pip install scipy > "$CONFIGURATION_TEMP_DIR"/install-scipy.log
+if ! pip install scipy > "$CONFIGURATION_TEMP_DIR"/install-scipy.log; then
+    echo scipy installation failed:
+    cat "$CONFIGURATION_TEMP_DIR"/install-scipy.log
+    exit 1
+fi
+
 #python <<EOF
 #import scipy
 #scipy.test('full')
@@ -97,7 +102,11 @@ easy_install pyzmq
 pip install Jinja2
 pip install tornado
 
-pip install pymc > "$CONFIGURATION_TEMP_DIR"/install-scipy.log
+if ! pip install pymc > "$CONFIGURATION_TEMP_DIR"/install-pymc.log; then
+    echo pymc installation failed:
+    cat "$CONFIGURATION_TEMP_DIR"/install-pymc.log
+    exit 1
+fi
 
 pip install pandas
 #nosetests pandas
