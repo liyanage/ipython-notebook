@@ -73,8 +73,6 @@
 		1B0182C416D8608D00D1C925 /* BookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF026C16D7D0EA00ED3FC4 /* BookmarksViewController.m */; };
 		1B1ACEF816D605EB00F6E044 /* libpng.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1ACEF716D605EB00F6E044 /* libpng.dylib */; };
 		1B28585716D6B8CB000E80C6 /* libpng.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B1ACEF716D605EB00F6E044 /* libpng.dylib */; };
-		1B28585816D6B8CC000E80C6 /* libpng15.15.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1BF06A9716D60AA1008A73AB /* libpng15.15.dylib */; };
-		1B28585916D6B8CE000E80C6 /* libpng15.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1BF06A9816D60AA1008A73AB /* libpng15.dylib */; };
 		1B28585A16D6B8D0000E80C6 /* libfreetype.6.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B28585516D6B89B000E80C6 /* libfreetype.6.dylib */; };
 		1B28585B16D6B8D3000E80C6 /* libfreetype.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B28585616D6B89B000E80C6 /* libfreetype.dylib */; };
 		1B28585E16D6C01E000E80C6 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B28585C16D6C01E000E80C6 /* Credits.rtf */; };
@@ -86,6 +84,8 @@
 		1B40506816C2036400AC636C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B40506716C2036400AC636C /* AppDelegate.m */; };
 		1B40506B16C2036500AC636C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B40506916C2036500AC636C /* MainMenu.xib */; };
 		1B40507316C2041D00AC636C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B40507116C203D700AC636C /* WebKit.framework */; };
+		1B4358E4182084E30042DB93 /* libpng16.16.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B4358E1182084140042DB93 /* libpng16.16.dylib */; };
+		1B4358E5182084E30042DB93 /* libpng16.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B4358E2182084290042DB93 /* libpng16.dylib */; };
 		1B4E81D816C9990E00D174F2 /* mime.types in Resources */ = {isa = PBXBuildFile; fileRef = 1B4E81D716C9990E00D174F2 /* mime.types */; };
 		1B532E2F16D55AB400CB6A0C /* iPython Notebook.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B532E2E16D55AB400CB6A0C /* iPython Notebook.icns */; };
 		1B74002516D9B2060014A3BE /* BookmarksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B74002316D9B2060014A3BE /* BookmarksViewController.xib */; };
@@ -198,10 +198,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1B4358E4182084E30042DB93 /* libpng16.16.dylib in Embed frameworks */,
+				1B4358E5182084E30042DB93 /* libpng16.dylib in Embed frameworks */,
 				1BB34DC016DC8E2200E5F0B7 /* Sparkle.framework in Embed frameworks */,
 				1B28585716D6B8CB000E80C6 /* libpng.dylib in Embed frameworks */,
-				1B28585816D6B8CC000E80C6 /* libpng15.15.dylib in Embed frameworks */,
-				1B28585916D6B8CE000E80C6 /* libpng15.dylib in Embed frameworks */,
 				1B28585A16D6B8D0000E80C6 /* libfreetype.6.dylib in Embed frameworks */,
 				1B28585B16D6B8D3000E80C6 /* libfreetype.dylib in Embed frameworks */,
 				1B9ECD3216E6B5C8004627D0 /* libgfortran.2.0.0.dylib in Embed frameworks */,
@@ -259,11 +259,12 @@
 		1B40507116C203D700AC636C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1B40507416C204FC00AC636C /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
 		1B40507616C2054900AC636C /* IPython Notebook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "IPython Notebook.entitlements"; sourceTree = "<group>"; };
+		1B4358E1182084140042DB93 /* libpng16.16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng16.16.dylib; path = libpng/lib/libpng16.16.dylib; sourceTree = "<group>"; };
+		1B4358E2182084290042DB93 /* libpng16.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng16.dylib; path = libpng/lib/libpng16.dylib; sourceTree = "<group>"; };
 		1B4E818E16C8647F00D174F2 /* create-ipython-virtualenv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "create-ipython-virtualenv.sh"; sourceTree = "<group>"; };
 		1B4E81D616C9787100D174F2 /* launch-ipython.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "launch-ipython.py"; sourceTree = "<group>"; };
 		1B4E81D716C9990E00D174F2 /* mime.types */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mime.types; path = /etc/apache2/mime.types; sourceTree = "<absolute>"; };
 		1B532E2E16D55AB400CB6A0C /* iPython Notebook.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "iPython Notebook.icns"; sourceTree = "<group>"; };
-		1B5AE92B16DD6A8400147B14 /* libpng15.15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng15.15.dylib; path = libpng/lib/libpng15.15.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B74002416D9B2060014A3BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BookmarksViewController.xib; sourceTree = "<group>"; };
 		1B7F41E416E4685800E21851 /* IPython Notebook Document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "IPython Notebook Document.icns"; sourceTree = "<group>"; };
 		1B7F41EF16E5187300E21851 /* NotebookWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookWindowController.h; sourceTree = "<group>"; };
@@ -283,8 +284,6 @@
 		1BEF026B16D7D0EA00ED3FC4 /* BookmarksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarksViewController.h; sourceTree = "<group>"; };
 		1BEF026C16D7D0EA00ED3FC4 /* BookmarksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarksViewController.m; sourceTree = "<group>"; };
 		1BF020F816DFD67600F5B454 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		1BF06A9716D60AA1008A73AB /* libpng15.15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng15.15.dylib; path = libpng/lib/libpng15.15.dylib; sourceTree = "<group>"; };
-		1BF06A9816D60AA1008A73AB /* libpng15.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng15.dylib; path = libpng/lib/libpng15.dylib; sourceTree = "<group>"; };
 		1BF40D8D16D5F88600D4FDEB /* build-libpng.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-libpng.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,10 +335,9 @@
 		1B40505316C2036400AC636C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1B5AE92B16DD6A8400147B14 /* libpng15.15.dylib */,
+				1B4358E1182084140042DB93 /* libpng16.16.dylib */,
+				1B4358E2182084290042DB93 /* libpng16.dylib */,
 				1B1ACEF716D605EB00F6E044 /* libpng.dylib */,
-				1BF06A9716D60AA1008A73AB /* libpng15.15.dylib */,
-				1BF06A9816D60AA1008A73AB /* libpng15.dylib */,
 				1B28585516D6B89B000E80C6 /* libfreetype.6.dylib */,
 				1B28585616D6B89B000E80C6 /* libfreetype.dylib */,
 				1B9ECD2F16E6B580004627D0 /* libgfortran.2.0.0.dylib */,

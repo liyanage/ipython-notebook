@@ -3,7 +3,7 @@
 set -e
 #set -x
 
-SOURCEDIR=libpng-1.5.14
+SOURCEDIR=libpng-1.6.6
 TARBALL=$SOURCEDIR.tar.gz
 DOWNLOAD_DIR="$TARGET_TEMP_DIR"
 mkdir -p "$DOWNLOAD_DIR"
