@@ -25,6 +25,10 @@ def process_file(path):
         print cmd
         subprocess.check_call(cmd, shell=True)
 
+print 'rewriting dynamic library load paths in {}'.format(sys.argv[1])
+
+assert sys.argv[1] != '/'
+
 for dirpath, dirnames, filenames in os.walk(sys.argv[1]):
     for filename in filenames:
         if not (filename.endswith('.so') or filename.endswith('.dylib')):
