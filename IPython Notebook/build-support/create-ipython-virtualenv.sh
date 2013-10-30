@@ -97,6 +97,10 @@ CFLAGS="-I$SCRIPT_INPUT_FILE_1/include -I$SCRIPT_INPUT_FILE_2/include/freetype2 
 LDFLAGS="-framework ApplicationServices -L$SCRIPT_INPUT_FILE_1/lib -L$SCRIPT_INPUT_FILE_2/lib"
 CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" pip install matplotlib
 
+# Install modules - scikit-learn
+pip install scikit-learn
+
+
 # Install modules - prerequisites for IPython Notebook
 easy_install pyzmq
 pip install Jinja2
