@@ -657,11 +657,10 @@
 			);
 			name = "Embed OpenCV frameworks";
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rsync -aP \"$SCRIPT_INPUT_FILE_0\"/lib/lib*.dylib \"$SCRIPT_OUTPUT_FILE_0\"/\npython \"$SRCROOT/IPython Notebook/build-support/rewrite-dylib.py\" \"$SCRIPT_OUTPUT_FILE_0\"\n";
+			shellScript = "rsync -aP \"$SCRIPT_INPUT_FILE_0\"/lib/lib*.dylib \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/\npython \"$SRCROOT/IPython Notebook/build-support/rewrite-dylib.py\" \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/\n";
 		};
 		1B9ECD3A16E7C182004627D0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
