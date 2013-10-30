@@ -114,7 +114,7 @@ pip install pandas
 # Install iPython
 IPYTHON_DISTRIBUTION="$DERIVED_FILE_DIR"/ipython
 if ! [ -e "$IPYTHON_DISTRIBUTION" ]; then
-    curl -L -o ipython-distribution.zip https://github.com/ipython/ipython/archive/rel-0.13.1.zip
+    curl -L -o ipython-distribution.zip https://github.com/ipython/ipython/releases/download/rel-1.1.0/ipython-1.1.0.zip
     unzip -d "$IPYTHON_DISTRIBUTION" ipython-distribution.zip
     rm ipython-distribution.zip
 fi

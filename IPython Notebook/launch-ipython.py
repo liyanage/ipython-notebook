@@ -2,8 +2,8 @@
 
 import os; activate_this=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'activate_this.py'); execfile(activate_this, dict(__file__=activate_this)); del os, activate_this
 
-# EASY-INSTALL-ENTRY-SCRIPT: 'ipython==0.13.1','console_scripts','ipython'
-__requires__ = 'ipython==0.13.1'
+# EASY-INSTALL-ENTRY-SCRIPT: 'ipython==1.1.0','console_scripts','ipython'
+__requires__ = 'ipython==1.1.0'
 import sys
 from pkg_resources import load_entry_point
 
@@ -29,7 +29,7 @@ mimetypes.knownfiles = [mimetype_path]
 # ensure the forked Python processes inherit our sys.path so they can find the embedded modules
 os.environ['PYTHONPATH'] = os.pathsep.join(sys.path)
 
-entry_point = load_entry_point('ipython==0.13.1', 'console_scripts', 'ipython')
+entry_point = load_entry_point('ipython==1.1.0', 'console_scripts', 'ipython')
 result = entry_point()
 sys.exit(result)
 
