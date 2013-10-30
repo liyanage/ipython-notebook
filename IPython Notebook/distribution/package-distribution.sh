@@ -36,7 +36,7 @@ cat <<EOF
 		<item>
 			<title>Version $VERSION</title>
 			<sparkle:releaseNotesLink>$RELEASENOTES_URL</sparkle:releaseNotesLink>
-			<sparkle:minimumSystemVersion>10.8.2</sparkle:minimumSystemVersion>
+			<sparkle:minimumSystemVersion>10.9</sparkle:minimumSystemVersion>
 			<pubDate>$PUBDATE</pubDate>
 			<enclosure
 				url="$DOWNLOAD_URL"
