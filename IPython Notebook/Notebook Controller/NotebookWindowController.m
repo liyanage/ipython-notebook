@@ -218,6 +218,8 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (BOOL)launchNotebookServerTask
 {
+	[self clearApplicationBundleLocationDependentCacheFiles];
+
 	NSURL *virtualEnvPythonURL = [[NSBundle mainBundle] URLForResource:@"python" withExtension:nil subdirectory:@"virtualenv/bin"];
 	NSURL *launchScriptURL = [[NSBundle mainBundle] URLForResource:@"launch-ipython" withExtension:@"py" subdirectory:@"virtualenv/bin"];
 	NSAssert(launchScriptURL, NSLocalizedString(@"Unable to determine url to launch-ipython.py script in resources", nil));
@@ -253,6 +255,22 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 	
 	self.notebookURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://127.0.0.1:%@", portNumber]];
 	return YES;
+}
+
+
+- (void)clearApplicationBundleLocationDependentCacheFiles
+{
+	NSURL *homeDirectoryUrl = [NSURL fileURLWithPath:NSHomeDirectory()];
+	NSURL *matplotlibFontListCacheUrl = [homeDirectoryUrl URLByAppendingPathComponent:@".matplotlib/fontList.cache"];
+
+	NSFileManager *fm = [NSFileManager defaultManager];
+	if ([fm fileExistsAtPath:[matplotlibFontListCacheUrl path]]) {
+		NSLog(@"Removing cache file %@", [matplotlibFontListCacheUrl path]);
+		NSError *error = nil;
+		if (![fm removeItemAtURL:matplotlibFontListCacheUrl error:&error]) {
+			NSLog(@"Unable to remove cache file: %@", error);
+		}
+	}
 }
 
 
