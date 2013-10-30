@@ -30,9 +30,13 @@ if ! pip freeze >/dev/null 2>&1; then
     easy_install --install-dir="$BUILD_PYTHONPATH" pip
 fi
 
+
 if ! type virtualenv >/dev/null 2>&1; then
     echo Installing virtualenv...
     easy_install --install-dir="$BUILD_PYTHONPATH" virtualenv
+	VIRTUALENV="$BUILD_PYTHONPATH"/virtualenv
+else
+	VIRTUALENV=virtualenv
 fi
 
 # This is the location of the virtualenv. It is included
@@ -45,8 +49,8 @@ cd "$VIRTUALENV_DIR"
 
 # Initialize the virtualenv
 if ! [ -e .Python ]; then
-    "$BUILD_PYTHONPATH"/virtualenv --no-site-packages .
-    #"$BUILD_PYTHONPATH"/virtualenv --system-site-packages .
+    "$VIRTUALENV" --no-site-packages .
+    #"$VIRTUALENV" --system-site-packages .
 
     # add an @rpath entry to the python binary so that the
     # .so extensions it loads can find our custom-built,
@@ -118,7 +122,7 @@ rsync -aP "$SCRIPT_INPUT_FILE_3"/lib/python2.7/ "$VIRTUALENV_DIR"/lib/python2.7/
 
 # Rewrite some scripts to make them relocatable, so that
 # users can move around the .app wrapper.
-#virtualenv --relocatable "$VIRTUALENV_DIR"
+#"$VIRTUALENV" --relocatable "$VIRTUALENV_DIR"
 
 # Get rid of any .pyc bytecode files.
 find "$VIRTUALENV_DIR" -name '*.pyc' -delete
