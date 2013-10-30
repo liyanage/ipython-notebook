@@ -17,8 +17,7 @@ if extra_paths:
     sys.path.extend(extra_paths)
 
 # ipython help  notebook --help-all
-sys.argv = ['ipython', 'notebook', '--pylab', 'inline', '--no-browser', '--port={}'.format(port), '--ipython-dir={}'.format(ipython_dir), '--notebook-dir={}'.format(ipython_dir)]
-
+sys.argv = ['ipython', 'notebook', '--matplotlib', 'inline', '--no-browser', '--port={}'.format(port), '--ipython-dir={}'.format(ipython_dir), '--notebook-dir={}'.format(ipython_dir)]
 resource_dir = os.path.realpath(__file__)
 for i in range(3):
 	resource_dir = os.path.dirname(resource_dir)
