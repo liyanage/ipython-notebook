@@ -841,10 +841,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				PROJECT_TEMP_DIR = "$(OBJROOT)/iPython_Notebook.build";
-				SDKROOT = macosx10.8;
 				SU_FEED_URL = "http://127.0.0.1:3000/appcast.xml";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -869,9 +868,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PROJECT_TEMP_DIR = "$(OBJROOT)/iPython_Notebook.build";
-				SDKROOT = macosx10.8;
 				SU_FEED_URL = "http://cdn.entropy.ch/software/ipython-notebook/appcast.xml";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
