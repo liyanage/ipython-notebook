@@ -7,7 +7,12 @@ set -x
 # pylab needs a fortran compiler
 export PATH=$PATH:/usr/local/bin # presumably where gfortran is
 if ! type gfortran; then
-    echo Please install gfortran, for example from http://r.research.att.com/tools/
+    echo Please install gfortran, for example from http://cran.r-project.org/bin/macosx/tools/
+    exit 1
+fi
+
+if ! [ -e /usr/local/lib/libgfortran.2.dylib ] ; then
+    echo libgfortran.2.dylib not found in /usr/local/lib, please install gfortran, for example from http://cran.r-project.org/bin/macosx/tools/
     exit 1
 fi
 
