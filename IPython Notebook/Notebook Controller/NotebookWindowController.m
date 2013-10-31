@@ -586,8 +586,13 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (NSString *)currentNotebookIdentifier
 {
-	id value = [self evaluateWebScript:@"IPython.notebook.notebook_id"];
-	return [value respondsToSelector:@selector(length)] && [value length] ? value : nil;
+	NSString *currentURLPath = [[[[[self.webView mainFrame] dataSource] request] URL] path];
+	if ([currentURLPath length] < 37) {
+		return nil;
+	}
+	
+	NSRange uuidRange = [currentURLPath rangeOfString:@"/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" options:NSRegularExpressionSearch|NSCaseInsensitiveSearch|NSAnchoredSearch];
+	return uuidRange.location != NSNotFound ? [currentURLPath substringFromIndex:1] : nil;
 }
 
 
@@ -819,9 +824,9 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
     if (![self currentPageIsNotebook]) {
         return;
     }
-	[self evaluateWebScript:@"$('#kill_and_exit').hide();"];
-	[self evaluateWebScript:@"$('#ui-menu-0 li').filter(function () {return $.inArray(this.id, ['copy_notebook', 'rename_notebook', 'save_notebook']) == -1}).hide();"];
-	[self evaluateWebScript:@"$('#ui-menu-0 hr').hide();"];
+	
+	// Disable some menu items that are undesirable in the context of an app or are redundant with the app's menus
+	[self evaluateWebScript:@"$('#new_notebook').parent().children('li').filter(function () {return $.inArray(this.id, ['copy_notebook', 'rename_notebook', 'save_checkpoint']) == -1}).hide();"];
 }
 
 
