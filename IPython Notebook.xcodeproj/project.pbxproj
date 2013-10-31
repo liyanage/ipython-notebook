@@ -457,8 +457,8 @@
 				1BBB91FE16D3E0FA00A1933A /* Copy additional virtualenv content */,
 				1B1ACEF916D6066300F6E044 /* Embed frameworks */,
 				1B943E6216E8474B00218E60 /* Embed OpenCV frameworks */,
-				1B10CD8E1820CDFB00E71996 /* dyld-patch and code-sign embedded frameworks */,
 				1B355BF116DDB716001C25E4 /* Embed XPC Services */,
+				1B10CD8E1820CDFB00E71996 /* dyld-patch and code-sign embedded frameworks */,
 			);
 			buildRules = (
 			);
