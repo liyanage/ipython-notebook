@@ -19,4 +19,8 @@
 @property (strong) IBOutlet BookmarksViewController *pythonPathBookmarksViewController;
 @property (weak) IBOutlet NSView *pythonPathBookmarksPlaceholderView;
 
+@property (strong) NSString *customCss;
+
+- (IBAction)resetCustomCss:(id)sender;
+
 @end

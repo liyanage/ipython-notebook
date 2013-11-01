@@ -8,23 +8,11 @@
 
 #import "NotebookWindowController.h"
 
-typedef NS_ENUM(NSUInteger, ApplicationState) {
-	ApplicationStateUnknown = 0,
-	ApplicationStateCheckingPersistedDocumentsDirectory,
-	ApplicationStateCheckingDocumentsDirectory,
-	ApplicationStateReady,
-	ApplicationStateTerminating,
-	ApplicationStateWaitingForNotebookStartup,
-	ApplicationStateNotebookRunning,
-};
-
-
 @interface NotebookWindowController ()
 @property (strong) NSTask *task;
 @property (strong) NSURL *documentDirectoryURL;
 @property (strong) NSURL *notebookURL;
 @property (strong) NSArray *deferredNotebookDocumentsToOpen;
-@property (assign) ApplicationState applicationState;
 @property (assign) NSUInteger notebookServerStartupCheckCount;
 @property (weak) NSOpenPanel *currentOpenDocumentPanel;
 @end
@@ -118,9 +106,23 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 }
 
 
+- (NSURL *)customCssFileUrl
+{
+	return [self.documentDirectoryURL URLByAppendingPathComponent:@"profile_default/static/custom/custom.css"];
+}
+
+
+- (NSURL *)defaultCustomCssFileUrl
+{
+	NSURL *url = [[NSBundle mainBundle] URLForResource:@"profile_default" withExtension:nil];
+	url = [url URLByAppendingPathComponent:@"static/custom/custom.css"];
+	return url;
+}
+
+
 - (void)copyDefaultProfileToDocumentsDirectory
 {
-	NSURL *destinationURL = [self.documentDirectoryURL URLByAppendingPathComponent:@"profile_default/static/custom/custom.css"];
+	NSURL *destinationURL = [self customCssFileUrl];
 	NSFileManager *fm = [NSFileManager defaultManager];
 	if ([fm fileExistsAtPath:[destinationURL path]]) {
 		return;
