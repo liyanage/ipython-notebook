@@ -614,7 +614,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python \"$SRCROOT/IPython Notebook/build-support/rewrite-dylib.py\" \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/\nfor i in \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/*.{dylib,framework} \"$BUILT_PRODUCTS_DIR/$XPCSERVICES_FOLDER_PATH\"/*.xpc; do\n    codesign --force -s \"$CODE_SIGN_IDENTITY\" \"$i\"\ndone\n";
+			shellScript = "python \"$SRCROOT/IPython Notebook/build-support/rewrite-dylib.py\" \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/\nfor i in \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/*.{dylib,framework} \"$BUILT_PRODUCTS_DIR/$XPCSERVICES_FOLDER_PATH\"/*.xpc; do\n    codesign -v \"$i\" || codesign --force -s \"$CODE_SIGN_IDENTITY\" \"$i\"\ndone\n";
 		};
 		1B28582916D69F59000E80C6 /* Build libfreetype2 */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -679,7 +679,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rsync -aP \"$SCRIPT_INPUT_FILE_0\"/lib/lib*.dylib \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/";
+			shellScript = "rsync -auP \"$SCRIPT_INPUT_FILE_0\"/lib/lib*.dylib \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/";
 		};
 		1B9ECD3A16E7C182004627D0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
