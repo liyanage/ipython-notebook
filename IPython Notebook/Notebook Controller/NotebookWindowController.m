@@ -82,6 +82,7 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 				}
                 [self copyExampleNoteBookToDocmentsDirectory];
 			}
+			[self copyDefaultProfileToDocumentsDirectory];
 			self.applicationState = ApplicationStateReady;
 			[self.firstTimeView setHidden:YES];
 			if (![self launchNotebookServerTask]) {
@@ -114,6 +115,25 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
     if (![fm copyItemAtURL:exampleDocURL toURL:destinationURL error:&error]) {
         NSLog(@"Unable to copy example document from %@ to %@: %@", exampleDocURL, destinationURL, error);
     }
+}
+
+
+- (void)copyDefaultProfileToDocumentsDirectory
+{
+    NSURL *destinationURL = [self.documentDirectoryURL URLByAppendingPathComponent:@"profile_default/static/custom/custom.css"];
+    NSFileManager *fm = [NSFileManager defaultManager];
+	if ([fm fileExistsAtPath:[destinationURL path]]) {
+		return;
+	}
+
+    NSURL *defaultProfileURL = [[NSBundle mainBundle] URLForResource:@"profile_default" withExtension:nil];
+	NSArray *arguments = @[@"-a", [defaultProfileURL path], [self.documentDirectoryURL path]];
+	NSTask *rsyncTask = [NSTask launchedTaskWithLaunchPath:@"/usr/bin/rsync" arguments:arguments];
+	[rsyncTask waitUntilExit];
+	int status = [rsyncTask terminationStatus];
+	if (status != 0) {
+		NSLog(@"Unable to copy default profile, non-zero termination status %d", status);
+	}
 }
 
 

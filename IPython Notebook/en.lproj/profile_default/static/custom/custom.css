@@ -1,0 +1,13 @@
+div.code_cell pre, div.code_cell div.prompt {
+    font-family: TheSansMono-Cd5, Menlo;
+    font-size: 12px;
+}
+
+div.code_cell div.input_prompt {
+    padding-top: 6px;
+}
+
+div.code_cell div.output_prompt {
+    padding-top: 7px;
+}
+

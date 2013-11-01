@@ -71,6 +71,7 @@
 
 /* Begin PBXBuildFile section */
 		1B0182C416D8608D00D1C925 /* BookmarksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF026C16D7D0EA00ED3FC4 /* BookmarksViewController.m */; };
+		1B06C39C182374A900E4A238 /* profile_default in Resources */ = {isa = PBXBuildFile; fileRef = 1B06C39A182374A900E4A238 /* profile_default */; };
 		1B1ACEF816D605EB00F6E044 /* libpng.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1ACEF716D605EB00F6E044 /* libpng.dylib */; };
 		1B28585716D6B8CB000E80C6 /* libpng.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B1ACEF716D605EB00F6E044 /* libpng.dylib */; };
 		1B28585A16D6B8D0000E80C6 /* libfreetype.6.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B28585516D6B89B000E80C6 /* libfreetype.6.dylib */; };
@@ -236,6 +237,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B06C39B182374A900E4A238 /* en */ = {isa = PBXFileReference; lastKnownFileType = folder; name = en; path = en.lproj/profile_default; sourceTree = "<group>"; };
 		1B1ACEF716D605EB00F6E044 /* libpng.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpng.dylib; path = libpng/lib/libpng.dylib; sourceTree = "<group>"; };
 		1B28582416D69F08000E80C6 /* build-libfreetype2.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-libfreetype2.sh"; sourceTree = "<group>"; };
 		1B28585516D6B89B000E80C6 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = libfreetype2/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 		1B40505B16C2036400AC636C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1B06C39A182374A900E4A238 /* profile_default */,
 				1BA33C2216ED213B002BB23D /* Welcome to IPython Notebook.ipynb */,
 				1B28585C16D6C01E000E80C6 /* Credits.rtf */,
 				1B532E2E16D55AB400CB6A0C /* iPython Notebook.icns */,
@@ -568,6 +571,7 @@
 			files = (
 				1B40505F16C2036400AC636C /* InfoPlist.strings in Resources */,
 				1B28585E16D6C01E000E80C6 /* Credits.rtf in Resources */,
+				1B06C39C182374A900E4A238 /* profile_default in Resources */,
 				1B40506B16C2036500AC636C /* MainMenu.xib in Resources */,
 				1B4E81D816C9990E00D174F2 /* mime.types in Resources */,
 				1B532E2F16D55AB400CB6A0C /* iPython Notebook.icns in Resources */,
@@ -760,6 +764,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1B06C39A182374A900E4A238 /* profile_default */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B06C39B182374A900E4A238 /* en */,
+			);
+			name = profile_default;
+			sourceTree = "<group>";
+		};
 		1B28585C16D6C01E000E80C6 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
