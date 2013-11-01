@@ -1,9 +1,9 @@
 //
-//  NotebookWindowController.m
-//  IPython Notebook
+//	NotebookWindowController.m
+//	IPython Notebook
 //
-//  Created by Marc Liyanage on 3/4/13.
-//  Copyright (c) 2013 Marc Liyanage. All rights reserved.
+//	Created by Marc Liyanage on 3/4/13.
+//	Copyright (c) 2013 Marc Liyanage. All rights reserved.
 //
 
 #import "NotebookWindowController.h"
@@ -36,8 +36,8 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (void)windowDidLoad
 {
-    [super windowDidLoad];
-    
+	[super windowDidLoad];
+	
 	[self checkConfiguredDocumentsDirectory];
 }
 
@@ -80,7 +80,7 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 				if (bookmarkData) {
 					[[NSUserDefaults standardUserDefaults] setObject:bookmarkData forKey:@"DocumentsDirectoryBookmarkData"];
 				}
-                [self copyExampleNoteBookToDocmentsDirectory];
+				[self copyExampleNoteBookToDocmentsDirectory];
 			}
 			[self copyDefaultProfileToDocumentsDirectory];
 			self.applicationState = ApplicationStateReady;
@@ -102,31 +102,31 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (void)copyExampleNoteBookToDocmentsDirectory
 {
-    NSURL *exampleDocURL = [[NSBundle mainBundle] URLForResource:@"Welcome to IPython Notebook" withExtension:NOTEBOOK_PATH_EXTENSION];
+	NSURL *exampleDocURL = [[NSBundle mainBundle] URLForResource:@"Welcome to IPython Notebook" withExtension:NOTEBOOK_PATH_EXTENSION];
 
-    NSURL *destinationURL = [self.documentDirectoryURL URLByAppendingPathComponent:[exampleDocURL lastPathComponent]];
-    NSFileManager *fm = [NSFileManager defaultManager];
-    
-    if ([fm fileExistsAtPath:[destinationURL path]]) {
-        return;
-    }
-    
-    NSError *error = nil;
-    if (![fm copyItemAtURL:exampleDocURL toURL:destinationURL error:&error]) {
-        NSLog(@"Unable to copy example document from %@ to %@: %@", exampleDocURL, destinationURL, error);
-    }
+	NSURL *destinationURL = [self.documentDirectoryURL URLByAppendingPathComponent:[exampleDocURL lastPathComponent]];
+	NSFileManager *fm = [NSFileManager defaultManager];
+	
+	if ([fm fileExistsAtPath:[destinationURL path]]) {
+		return;
+	}
+	
+	NSError *error = nil;
+	if (![fm copyItemAtURL:exampleDocURL toURL:destinationURL error:&error]) {
+		NSLog(@"Unable to copy example document from %@ to %@: %@", exampleDocURL, destinationURL, error);
+	}
 }
 
 
 - (void)copyDefaultProfileToDocumentsDirectory
 {
-    NSURL *destinationURL = [self.documentDirectoryURL URLByAppendingPathComponent:@"profile_default/static/custom/custom.css"];
-    NSFileManager *fm = [NSFileManager defaultManager];
+	NSURL *destinationURL = [self.documentDirectoryURL URLByAppendingPathComponent:@"profile_default/static/custom/custom.css"];
+	NSFileManager *fm = [NSFileManager defaultManager];
 	if ([fm fileExistsAtPath:[destinationURL path]]) {
 		return;
 	}
 
-    NSURL *defaultProfileURL = [[NSBundle mainBundle] URLForResource:@"profile_default" withExtension:nil];
+	NSURL *defaultProfileURL = [[NSBundle mainBundle] URLForResource:@"profile_default" withExtension:nil];
 	NSArray *arguments = @[@"-a", [defaultProfileURL path], [self.documentDirectoryURL path]];
 	NSTask *rsyncTask = [NSTask launchedTaskWithLaunchPath:@"/usr/bin/rsync" arguments:arguments];
 	[rsyncTask waitUntilExit];
@@ -262,13 +262,13 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 	environment[@"IPYTHON_NOTEBOOK_APP_IPYTHON_DIR"] = [self.documentDirectoryURL path];
 	environment[@"PYTHONDONTWRITEBYTECODE"] = @"1";
 
-    NSString *pythonPath = [self customPythonPath];
-    if (pythonPath) {
-        environment[@"IPYTHON_NOTEBOOK_APP_EXTRA_PYTHONPATH"] = pythonPath;
-    }
+	NSString *pythonPath = [self customPythonPath];
+	if (pythonPath) {
+		environment[@"IPYTHON_NOTEBOOK_APP_EXTRA_PYTHONPATH"] = pythonPath;
+	}
 	
-    self.task.environment = environment;
-	
+	self.task.environment = environment;
+
 	self.applicationState = ApplicationStateWaitingForNotebookStartup;
 	self.operationInProgress = YES;
 	[self.task launch];
@@ -296,14 +296,14 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (NSString *)customPythonPath
 {
-    if (![self.pythonPathURLs count]) {
-        return nil;
-    }
-    NSMutableArray *paths = [NSMutableArray array];
-    for (NSURL *url in self.pythonPathURLs) {
-        [paths addObject:[url path]];
-    }
-    return [paths componentsJoinedByString:@":"];
+	if (![self.pythonPathURLs count]) {
+		return nil;
+	}
+	NSMutableArray *paths = [NSMutableArray array];
+	for (NSURL *url in self.pythonPathURLs) {
+		[paths addObject:[url path]];
+	}
+	return [paths componentsJoinedByString:@":"];
 }
 
 
@@ -505,12 +505,12 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 		return self.documentDirectoryURL != nil;
 	}
 	if ([anItem action] == @selector(performClose:)) {
-        NSMenuItem *item = (NSMenuItem *)anItem;
-        if ([self currentPageIsNotebook]) {
-            [item setTitle:NSLocalizedString(@"Close Notebook", nil)];
-        } else {
-            [item setTitle:NSLocalizedString(@"Close Window", nil)];
-        }
+		NSMenuItem *item = (NSMenuItem *)anItem;
+		if ([self currentPageIsNotebook]) {
+			[item setTitle:NSLocalizedString(@"Close Notebook", nil)];
+		} else {
+			[item setTitle:NSLocalizedString(@"Close Window", nil)];
+		}
 		return YES;
 	}
 	return YES;
@@ -600,7 +600,7 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (BOOL)currentPageIsNotebook
 {
-    return [self currentNotebookIdentifier] != nil;
+	return [self currentNotebookIdentifier] != nil;
 }
 
 
@@ -618,53 +618,53 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (NSDictionary *)notebookInfo
 {
-    NSURL *infoURL = [self.notebookURL URLByAppendingPathComponent:@"notebooks"];
-    if (!infoURL) {
-        return nil;
-    }
-    NSData *data = [NSData dataWithContentsOfURL:infoURL];
-    if (!data) {
-        return nil;
-    }
-    NSArray *notebookList = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-    if (!notebookList) {
-        return nil;
-    }
-    
-    NSMutableDictionary *info = [NSMutableDictionary dictionary];
-    for (NSDictionary *notebookInfo in notebookList) {
-        NSString *identifier = notebookInfo[@"notebook_id"];
-        if (!identifier) {
-            continue;
-        }
-        info[identifier] = notebookInfo;
-    }
-    return info;
+	NSURL *infoURL = [self.notebookURL URLByAppendingPathComponent:@"notebooks"];
+	if (!infoURL) {
+		return nil;
+	}
+	NSData *data = [NSData dataWithContentsOfURL:infoURL];
+	if (!data) {
+		return nil;
+	}
+	NSArray *notebookList = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+	if (!notebookList) {
+		return nil;
+	}
+	
+	NSMutableDictionary *info = [NSMutableDictionary dictionary];
+	for (NSDictionary *notebookInfo in notebookList) {
+		NSString *identifier = notebookInfo[@"notebook_id"];
+		if (!identifier) {
+			continue;
+		}
+		info[identifier] = notebookInfo;
+	}
+	return info;
 }
 
 
 - (NSString *)currentNotebookName
 {
-    NSString *identifier = [self currentNotebookIdentifier];
-    if (!identifier) {
-        return nil;
-    }
-    
-    NSString *name = [self notebookInfo][identifier][@"name"];
-    return name;
+	NSString *identifier = [self currentNotebookIdentifier];
+	if (!identifier) {
+		return nil;
+	}
+	
+	NSString *name = [self notebookInfo][identifier][@"name"];
+	return name;
 }
 
 
 - (NSURL *)currentNotebookFileURL
 {
-    if (![self currentPageIsNotebook]) {
-        return nil;
-    }
-    NSString *filename = [self currentNotebookName];
-    filename = [filename stringByAppendingPathExtension:NOTEBOOK_PATH_EXTENSION];
-    NSURL *notebookURL = [self.documentDirectoryURL URLByAppendingPathComponent:filename];
-    notebookURL = [NSURL fileURLWithPath:[notebookURL path]];
-    return notebookURL;
+	if (![self currentPageIsNotebook]) {
+		return nil;
+	}
+	NSString *filename = [self currentNotebookName];
+	filename = [filename stringByAppendingPathExtension:NOTEBOOK_PATH_EXTENSION];
+	NSURL *notebookURL = [self.documentDirectoryURL URLByAppendingPathComponent:filename];
+	notebookURL = [NSURL fileURLWithPath:[notebookURL path]];
+	return notebookURL;
 }
 
 
@@ -684,8 +684,8 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 		return;
 	}
 
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.notebookURL];
-    [[self.webView mainFrame] loadRequest:request];
+	NSURLRequest *request = [NSURLRequest requestWithURL:self.notebookURL];
+	[[self.webView mainFrame] loadRequest:request];
 }
 
 
@@ -707,34 +707,34 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (BOOL)isNotebookServerURL:(NSURL *)url
 {
-    NSURL *notebookURL = self.notebookURL;
-    
-    if ([url port] != [notebookURL port]) {
-        return NO;
-    }
+	NSURL *notebookURL = self.notebookURL;
+	
+	if ([url port] != [notebookURL port]) {
+		return NO;
+	}
 
-    if (![[url host] isEqualToString:[notebookURL host]]) {
-        return NO;
-    }
+	if (![[url host] isEqualToString:[notebookURL host]]) {
+		return NO;
+	}
 
-    return YES;
+	return YES;
 }
 
 
 - (BOOL)URL:(NSURL *)url1 ignoringFragmentIsEqualToURL:(NSURL *)url2
 {
-    for (NSString *property in @[@"scheme", @"host", @"port", @"path", @"query"]) {
-        id value1 = [url1 valueForKey:property];
-        id value2 = [url2 valueForKey:property];
-        if (!value1 && !value2) {
-            continue;
-        }
-        if (![value1 isEqual:value2]) {
-            return NO;
-        }
-    }
-    
-    return YES;
+	for (NSString *property in @[@"scheme", @"host", @"port", @"path", @"query"]) {
+		id value1 = [url1 valueForKey:property];
+		id value2 = [url2 valueForKey:property];
+		if (!value1 && !value2) {
+			continue;
+		}
+		if (![value1 isEqual:value2]) {
+			return NO;
+		}
+	}
+	
+	return YES;
 }
 
 #pragma mark - NSWindowDelegate protocol
@@ -745,58 +745,58 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 		return YES;
 	}
 	
-    if ([self currentPageIsNotebookWithUnsavedChanges]) {
-        alertCompletionHandler handler = ^(NSInteger returnCode) {
-            if (returnCode == NSAlertThirdButtonReturn) {
-                return;
-            }
-            
-            if (returnCode == NSAlertFirstButtonReturn) {
-                [self saveCurrentNotebook];
-            }
-            
-            self.applicationState = ApplicationStateTerminating;
-            [NSApp terminate:self];
-        };
-        [self promptForUnsavedChangesWithCompletionHandler:handler];
-        return NO;
-    }
-	
-    return YES;
+	if ([self currentPageIsNotebookWithUnsavedChanges]) {
+		alertCompletionHandler handler = ^(NSInteger returnCode) {
+			if (returnCode == NSAlertThirdButtonReturn) {
+				return;
+			}
+			
+			if (returnCode == NSAlertFirstButtonReturn) {
+				[self saveCurrentNotebook];
+			}
+			
+			self.applicationState = ApplicationStateTerminating;
+			[NSApp terminate:self];
+		};
+		[self promptForUnsavedChangesWithCompletionHandler:handler];
+		return NO;
+	}
+
+	return YES;
 }
 
 
 - (BOOL)window:(NSWindow *)window shouldPopUpDocumentPathMenu:(NSMenu *)menu
 {
-    return self.applicationState == ApplicationStateNotebookRunning;
+	return self.applicationState == ApplicationStateNotebookRunning;
 }
 
 
 - (void)performClose:(id)sender
 {
-    if ([self currentPageIsNotebookWithUnsavedChanges]) {
-        alertCompletionHandler handler = ^(NSInteger returnCode) {
-            if (returnCode == NSAlertThirdButtonReturn) {
-                return;
-            }
-            
-            if (returnCode == NSAlertFirstButtonReturn) {
-                [self saveCurrentNotebook];
-            }
-            
-            [self closeCurrentNotebook];
-            
-        };
-        [self promptForUnsavedChangesWithCompletionHandler:handler];
-        return;
-    }
-    
-    if ([self currentPageIsNotebook]) {
-        [self closeCurrentNotebook];
-        return;
-    }
+	if ([self currentPageIsNotebookWithUnsavedChanges]) {
+		alertCompletionHandler handler = ^(NSInteger returnCode) {
+			if (returnCode == NSAlertThirdButtonReturn) {
+				return;
+			}
+			
+			if (returnCode == NSAlertFirstButtonReturn) {
+				[self saveCurrentNotebook];
+			}
+			
+			[self closeCurrentNotebook];
+			
+		};
+		[self promptForUnsavedChangesWithCompletionHandler:handler];
+		return;
+	}
+	
+	if ([self currentPageIsNotebook]) {
+		[self closeCurrentNotebook];
+		return;
+	}
 
-    [self.window performClose:sender];
+	[self.window performClose:sender];
 }
 
 
@@ -818,21 +818,21 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (NSArray *)webView:(WebView *)sender contextMenuItemsForElement:(NSDictionary *)element defaultMenuItems:(NSArray *)defaultMenuItems
 {
-    NSMutableArray *allowedItems = [NSMutableArray array];
-    
-    for (NSMenuItem *item in defaultMenuItems) {
-        switch ([item tag]) {
-            case WebMenuItemTagCopy:
-            case WebMenuItemTagPaste:
-                [allowedItems addObject:item];
-                break;
-                
-            default:
-                break;
-        }
-    }
-    
-    return allowedItems;
+	NSMutableArray *allowedItems = [NSMutableArray array];
+	
+	for (NSMenuItem *item in defaultMenuItems) {
+		switch ([item tag]) {
+			case WebMenuItemTagCopy:
+			case WebMenuItemTagPaste:
+				[allowedItems addObject:item];
+				break;
+				
+			default:
+				break;
+		}
+	}
+	
+	return allowedItems;
 }
 
 
@@ -840,10 +840,10 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (void)webView:(WebView *)sender didFinishLoadForFrame:(WebFrame *)frame
 {
-    [self updateWindowTitle];
-    if (![self currentPageIsNotebook]) {
-        return;
-    }
+	[self updateWindowTitle];
+	if (![self currentPageIsNotebook]) {
+		return;
+	}
 	
 	// Disable some menu items that are undesirable in the context of an app or are redundant with the app's menus
 	[self evaluateWebScript:@"$('#new_notebook').parent().children('li').filter(function () {return $.inArray(this.id, ['copy_notebook', 'rename_notebook', 'save_checkpoint']) == -1}).hide();"];
@@ -852,20 +852,20 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (void)webView:(WebView *)sender didReceiveTitle:(NSString *)title forFrame:(WebFrame *)frame
 {
-    // Handle renames by the user
-    [self updateWindowTitle];
+	// Handle renames by the user
+	[self updateWindowTitle];
 }
 
 
 - (void)updateWindowTitle
 {
-    if (![self currentPageIsNotebook]) {
-        [self.window setRepresentedURL:self.documentDirectoryURL];
-        [self.window setTitleWithRepresentedFilename:[self.documentDirectoryURL path]];
-        return;
-    }
-    [self.window setRepresentedURL:[self currentNotebookFileURL]];
-    [self.window setTitleWithRepresentedFilename:[[self currentNotebookFileURL] path]];
+	if (![self currentPageIsNotebook]) {
+		[self.window setRepresentedURL:self.documentDirectoryURL];
+		[self.window setTitleWithRepresentedFilename:[self.documentDirectoryURL path]];
+		return;
+	}
+	[self.window setRepresentedURL:[self currentNotebookFileURL]];
+	[self.window setTitleWithRepresentedFilename:[[self currentNotebookFileURL] path]];
 }
 
 
@@ -875,16 +875,16 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 {
 	NSURL *newURL = [request URL];
 
-    if (![self isNotebookServerURL:newURL]) {
-        [[NSWorkspace sharedWorkspace] openURL:newURL];
-        [listener ignore];
-        return;
-    }
+	if (![self isNotebookServerURL:newURL]) {
+		[[NSWorkspace sharedWorkspace] openURL:newURL];
+		[listener ignore];
+		return;
+	}
 	
-    NSURL *currentURL = [[[[webView mainFrame] dataSource] request] URL];
-    BOOL fragmentChangeOnly = [self URL:currentURL ignoringFragmentIsEqualToURL:newURL];
-    
-    WebNavigationType type = [actionInformation[WebActionNavigationTypeKey] intValue];
+	NSURL *currentURL = [[[[webView mainFrame] dataSource] request] URL];
+	BOOL fragmentChangeOnly = [self URL:currentURL ignoringFragmentIsEqualToURL:newURL];
+	
+	WebNavigationType type = [actionInformation[WebActionNavigationTypeKey] intValue];
 	if (fragmentChangeOnly || type == WebNavigationTypeOther || ![self currentPageIsNotebookWithUnsavedChanges]) {
 		[listener use];
 		return;
