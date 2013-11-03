@@ -272,6 +272,7 @@
 		1B7F41EF16E5187300E21851 /* NotebookWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookWindowController.h; sourceTree = "<group>"; };
 		1B7F41F016E5187300E21851 /* NotebookWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotebookWindowController.m; sourceTree = "<group>"; };
 		1B7F41F116E5187300E21851 /* NotebookWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotebookWindowController.xib; sourceTree = "<group>"; };
+		1B8145EA1826E0540002E4DD /* release-notes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "release-notes.html"; sourceTree = "<group>"; };
 		1B9ECD2F16E6B580004627D0 /* libgfortran.2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgfortran.2.0.0.dylib; path = /usr/local/lib/libgfortran.2.0.0.dylib; sourceTree = "<absolute>"; };
 		1B9ECD3016E6B599004627D0 /* libgfortran.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgfortran.2.dylib; path = /usr/local/lib/libgfortran.2.dylib; sourceTree = "<absolute>"; };
 		1B9ECD3116E6B5AF004627D0 /* libgfortran.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgfortran.dylib; path = /usr/local/lib/libgfortran.dylib; sourceTree = "<absolute>"; };
@@ -310,6 +311,7 @@
 			children = (
 				1B355C0416DDE6B6001C25E4 /* dsa_pub.pem */,
 				1B355BFC16DDD834001C25E4 /* package-distribution.sh */,
+				1B8145EA1826E0540002E4DD /* release-notes.html */,
 				1B3282EE16D9B91900858362 /* appcast.xml */,
 			);
 			path = distribution;
