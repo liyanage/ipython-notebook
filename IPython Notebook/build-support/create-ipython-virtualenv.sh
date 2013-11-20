@@ -100,9 +100,15 @@ CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" pip install matplotlib
 # Install modules - scikit-learn
 pip install scikit-learn
 
-# Install modules - scikit-learn
+# Install modules - scikit-image
 pip install Cython
 pip install scikit-image
+
+if ! pip install bokeh > "$CONFIGURATION_TEMP_DIR"/install-bokeh.log; then
+    echo bokeh installation failed:
+    cat "$CONFIGURATION_TEMP_DIR"/install-bokeh.log
+    exit 1
+fi
 
 # Install modules - prerequisites for IPython Notebook
 easy_install pyzmq
