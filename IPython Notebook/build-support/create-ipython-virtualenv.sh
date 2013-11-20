@@ -100,6 +100,9 @@ CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" pip install matplotlib
 # Install modules - scikit-learn
 pip install scikit-learn
 
+# Install modules - scikit-learn
+pip install Cython
+pip install scikit-image
 
 # Install modules - prerequisites for IPython Notebook
 easy_install pyzmq
