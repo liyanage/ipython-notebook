@@ -102,6 +102,7 @@ pip install scikit-learn
 
 # Install modules - scikit-image
 pip install Cython
+pip install PIL
 pip install scikit-image
 
 if ! pip install bokeh > "$CONFIGURATION_TEMP_DIR"/install-bokeh.log; then
