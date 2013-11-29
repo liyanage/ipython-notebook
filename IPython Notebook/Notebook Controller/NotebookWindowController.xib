@@ -19,16 +19,18 @@
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="335" y="390" width="1000" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1366" height="746"/>
             <value key="minSize" type="size" width="1000" height="360"/>
             <view key="contentView" id="6" customClass="PerformCloseInterceptingView">
                 <rect key="frame" x="0.0" y="0.0" width="1000" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <webView translatesAutoresizingMaskIntoConstraints="NO" id="8">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                            <nil key="identifier"/>
+                        </webPreferences>
                         <connections>
                             <outlet property="UIDelegate" destination="-2" id="34"/>
                             <outlet property="frameLoadDelegate" destination="-2" id="38"/>
@@ -40,7 +42,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="20">
-                                <rect key="frame" x="442" y="180" width="216" height="32"/>
+                                <rect key="frame" x="443" y="180" width="215" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Choose Notebooks Folder…" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="29">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -63,25 +65,42 @@ We suggest that you create a new folder inside your Documents folder.</string>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <string key="userLabel">Text Field - Please choose a folder for your IPython Notebook documents. We suggest that you create a new folder inside your Documents folder.</string>
                             </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="21" firstAttribute="leading" secondItem="7" secondAttribute="leading" constant="20" symbolic="YES" id="22"/>
-                            <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" id="23"/>
                             <constraint firstItem="21" firstAttribute="top" secondItem="7" secondAttribute="top" constant="167" id="24"/>
                             <constraint firstItem="20" firstAttribute="top" secondItem="21" secondAttribute="bottom" constant="112" id="26"/>
-                            <constraint firstItem="20" firstAttribute="centerX" secondItem="21" secondAttribute="centerX" id="65"/>
+                            <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" id="I3j-vo-M5X"/>
+                            <constraint firstItem="21" firstAttribute="centerX" secondItem="20" secondAttribute="centerX" id="Ip0-gc-hG4"/>
+                            <constraint firstItem="21" firstAttribute="leading" secondItem="7" secondAttribute="leading" constant="20" symbolic="YES" id="UG9-MM-7yM"/>
                         </constraints>
                     </customView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LnL-pN-dr3" userLabel="App Icon">
+                        <rect key="frame" x="450" y="224" width="99" height="99"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="99" id="Lpd-b2-Pbp"/>
+                            <constraint firstAttribute="width" constant="99" id="Ons-CT-hdx"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="IPython Notebook" id="zcB-mv-Qc7"/>
+                        <connections>
+                            <binding destination="-2" name="hidden" keyPath="operationInProgress" id="FJX-4q-E1w">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </imageView>
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="9">
-                        <rect key="frame" x="492" y="172" width="16" height="16"/>
+                        <rect key="frame" x="411" y="172" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <connections>
                             <binding destination="-2" name="animate" keyPath="operationInProgress" id="37"/>
                         </connections>
                     </progressIndicator>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="51">
-                        <rect key="frame" x="420" y="147" width="160" height="17"/>
+                        <rect key="frame" x="433" y="172" width="160" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Starting notebook server" id="52">
                             <font key="font" metaFont="system"/>
@@ -104,12 +123,14 @@ We suggest that you create a new folder inside your Documents folder.</string>
                     <constraint firstItem="8" firstAttribute="bottom" secondItem="6" secondAttribute="bottom" id="13"/>
                     <constraint firstItem="7" firstAttribute="top" secondItem="6" secondAttribute="top" constant="-89" id="15"/>
                     <constraint firstItem="7" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="-50" id="17"/>
-                    <constraint firstItem="9" firstAttribute="centerY" secondItem="8" secondAttribute="centerY" id="18"/>
-                    <constraint firstItem="51" firstAttribute="centerX" secondItem="9" secondAttribute="centerX" id="62"/>
                     <constraint firstItem="8" firstAttribute="centerY" secondItem="7" secondAttribute="centerY" id="75"/>
-                    <constraint firstItem="51" firstAttribute="centerX" secondItem="7" secondAttribute="centerX" id="80"/>
-                    <constraint firstItem="9" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="88"/>
-                    <constraint firstItem="51" firstAttribute="top" secondItem="9" secondAttribute="bottom" constant="8" symbolic="YES" id="90"/>
+                    <constraint firstItem="51" firstAttribute="leading" secondItem="9" secondAttribute="trailing" constant="8" id="26s-57-Amf"/>
+                    <constraint firstItem="9" firstAttribute="centerY" secondItem="51" secondAttribute="centerY" id="BZn-bP-9aU"/>
+                    <constraint firstItem="51" firstAttribute="top" secondItem="LnL-pN-dr3" secondAttribute="bottom" constant="35" id="Cuh-wZ-nMD"/>
+                    <constraint firstItem="LnL-pN-dr3" firstAttribute="centerX" secondItem="51" secondAttribute="centerX" constant="-13" id="MIQ-SK-nON"/>
+                    <constraint firstItem="7" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="iN5-EW-n53"/>
+                    <constraint firstAttribute="centerY" secondItem="51" secondAttribute="centerY" id="iuQ-z3-2Iy"/>
+                    <constraint firstAttribute="centerX" secondItem="51" secondAttribute="centerX" constant="-13" id="mfF-Na-pvf"/>
                 </constraints>
             </view>
             <connections>
@@ -117,4 +138,7 @@ We suggest that you create a new folder inside your Documents folder.</string>
             </connections>
         </window>
     </objects>
+    <resources>
+        <image name="IPython Notebook" width="512" height="512"/>
+    </resources>
 </document>
