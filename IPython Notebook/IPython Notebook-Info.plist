@@ -32,7 +32,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>iPython Notebook</string>
+	<string>IPython Notebook</string>
 	<key>CFBundleIdentifier</key>
 	<string>ch.entropy.ipython-notebook</string>
 	<key>CFBundleInfoDictionaryVersion</key>

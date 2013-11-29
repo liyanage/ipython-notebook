@@ -88,7 +88,7 @@
 		1B4358E4182084E30042DB93 /* libpng16.16.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B4358E1182084140042DB93 /* libpng16.16.dylib */; };
 		1B4358E5182084E30042DB93 /* libpng16.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B4358E2182084290042DB93 /* libpng16.dylib */; };
 		1B4E81D816C9990E00D174F2 /* mime.types in Resources */ = {isa = PBXBuildFile; fileRef = 1B4E81D716C9990E00D174F2 /* mime.types */; };
-		1B532E2F16D55AB400CB6A0C /* iPython Notebook.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B532E2E16D55AB400CB6A0C /* iPython Notebook.icns */; };
+		1B532E2F16D55AB400CB6A0C /* IPython Notebook.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B532E2E16D55AB400CB6A0C /* IPython Notebook.icns */; };
 		1B74002516D9B2060014A3BE /* BookmarksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B74002316D9B2060014A3BE /* BookmarksViewController.xib */; };
 		1B7F41E516E4685800E21851 /* IPython Notebook Document.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B7F41E416E4685800E21851 /* IPython Notebook Document.icns */; };
 		1B7F41F216E5187300E21851 /* NotebookWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7F41F016E5187300E21851 /* NotebookWindowController.m */; };
@@ -266,7 +266,7 @@
 		1B4E818E16C8647F00D174F2 /* create-ipython-virtualenv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "create-ipython-virtualenv.sh"; sourceTree = "<group>"; };
 		1B4E81D616C9787100D174F2 /* launch-ipython.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "launch-ipython.py"; sourceTree = "<group>"; };
 		1B4E81D716C9990E00D174F2 /* mime.types */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mime.types; path = /etc/apache2/mime.types; sourceTree = "<absolute>"; };
-		1B532E2E16D55AB400CB6A0C /* iPython Notebook.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "iPython Notebook.icns"; sourceTree = "<group>"; };
+		1B532E2E16D55AB400CB6A0C /* IPython Notebook.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "IPython Notebook.icns"; sourceTree = "<group>"; };
 		1B74002416D9B2060014A3BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BookmarksViewController.xib; sourceTree = "<group>"; };
 		1B7F41E416E4685800E21851 /* IPython Notebook Document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "IPython Notebook Document.icns"; sourceTree = "<group>"; };
 		1B7F41EF16E5187300E21851 /* NotebookWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookWindowController.h; sourceTree = "<group>"; };
@@ -381,7 +381,7 @@
 				1B06C39A182374A900E4A238 /* profile_default */,
 				1BA33C2216ED213B002BB23D /* Welcome to IPython Notebook.ipynb */,
 				1B28585C16D6C01E000E80C6 /* Credits.rtf */,
-				1B532E2E16D55AB400CB6A0C /* iPython Notebook.icns */,
+				1B532E2E16D55AB400CB6A0C /* IPython Notebook.icns */,
 				1B7F41E416E4685800E21851 /* IPython Notebook Document.icns */,
 				1B40505C16C2036400AC636C /* IPython Notebook-Info.plist */,
 				1B40505D16C2036400AC636C /* InfoPlist.strings */,
@@ -576,7 +576,7 @@
 				1B06C39C182374A900E4A238 /* profile_default in Resources */,
 				1B40506B16C2036500AC636C /* MainMenu.xib in Resources */,
 				1B4E81D816C9990E00D174F2 /* mime.types in Resources */,
-				1B532E2F16D55AB400CB6A0C /* iPython Notebook.icns in Resources */,
+				1B532E2F16D55AB400CB6A0C /* IPython Notebook.icns in Resources */,
 				1B74002516D9B2060014A3BE /* BookmarksViewController.xib in Resources */,
 				1B355C0516DDE6B6001C25E4 /* dsa_pub.pem in Resources */,
 				1B7F41E516E4685800E21851 /* IPython Notebook Document.icns in Resources */,
