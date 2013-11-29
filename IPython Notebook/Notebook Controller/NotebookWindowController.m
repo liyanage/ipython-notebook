@@ -320,7 +320,7 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 			return;
 		}
 		self.notebookServerStartupCheckCount++;
-		if (self.notebookServerStartupCheckCount > 10) {
+		if (self.notebookServerStartupCheckCount > 30) {
 			NSAlert *alert = [self fatalErrorAlert];
 			self.applicationState = ApplicationStateTerminating;
 			alert.messageText = NSLocalizedString(@"Unable to launch iPython Notebook", nil);
@@ -330,6 +330,7 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 		}
 		
 		[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+//			NSLog(@"Notebook server startup test request completion: %lu %ld", self.notebookServerStartupCheckCount, ((NSHTTPURLResponse *)response).statusCode);
 			if (self.applicationState == ApplicationStateTerminating) {
 				return;
 			}
