@@ -77,7 +77,7 @@ We suggest that you create a new folder inside your Documents folder.</string>
                         </constraints>
                     </customView>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LnL-pN-dr3" userLabel="App Icon">
-                        <rect key="frame" x="450" y="224" width="99" height="99"/>
+                        <rect key="frame" x="450" y="184" width="99" height="99"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="99" id="Lpd-b2-Pbp"/>
@@ -93,14 +93,14 @@ We suggest that you create a new folder inside your Documents folder.</string>
                         </connections>
                     </imageView>
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="9">
-                        <rect key="frame" x="411" y="172" width="16" height="16"/>
+                        <rect key="frame" x="411" y="132" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <connections>
                             <binding destination="-2" name="animate" keyPath="operationInProgress" id="37"/>
                         </connections>
                     </progressIndicator>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="51">
-                        <rect key="frame" x="433" y="172" width="160" height="17"/>
+                        <rect key="frame" x="433" y="132" width="160" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Starting notebook server" id="52">
                             <font key="font" metaFont="system"/>
@@ -129,7 +129,7 @@ We suggest that you create a new folder inside your Documents folder.</string>
                     <constraint firstItem="51" firstAttribute="top" secondItem="LnL-pN-dr3" secondAttribute="bottom" constant="35" id="Cuh-wZ-nMD"/>
                     <constraint firstItem="LnL-pN-dr3" firstAttribute="centerX" secondItem="51" secondAttribute="centerX" constant="-13" id="MIQ-SK-nON"/>
                     <constraint firstItem="7" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="iN5-EW-n53"/>
-                    <constraint firstAttribute="centerY" secondItem="51" secondAttribute="centerY" id="iuQ-z3-2Iy"/>
+                    <constraint firstAttribute="centerY" secondItem="51" secondAttribute="centerY" constant="-40" id="iuQ-z3-2Iy"/>
                     <constraint firstAttribute="centerX" secondItem="51" secondAttribute="centerX" constant="-13" id="mfF-Na-pvf"/>
                 </constraints>
             </view>
