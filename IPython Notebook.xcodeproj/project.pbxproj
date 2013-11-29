@@ -602,7 +602,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -x\nrsync -aqP \"$SCRIPT_INPUT_FILE_0/\" \"$SCRIPT_OUTPUT_FILE_0/\"\ntouch \"$SCRIPT_OUTPUT_FILE_0/\"\ncodesign --force -s \"$CODE_SIGN_IDENTITY\" \"$SCRIPT_OUTPUT_FILE_0/\"bin/python\n";
+			shellScript = "set -x\nrsync -aqP \"$SCRIPT_INPUT_FILE_0/\" \"$SCRIPT_OUTPUT_FILE_0/\"\ntouch \"$SCRIPT_OUTPUT_FILE_0/\"\ncodesign $OTHER_CODE_SIGN_FLAGS --force -s \"$CODE_SIGN_IDENTITY\" \"$SCRIPT_OUTPUT_FILE_0/\"bin/python\n";
 		};
 		1B10CD8E1820CDFB00E71996 /* dyld-patch and code-sign embedded frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -616,7 +616,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python \"$SRCROOT/IPython Notebook/build-support/rewrite-dylib.py\" \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/\nfor i in \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/*.{dylib,framework} \"$BUILT_PRODUCTS_DIR/$XPCSERVICES_FOLDER_PATH\"/*.xpc; do\n    codesign -v \"$i\" || codesign --force -s \"$CODE_SIGN_IDENTITY\" \"$i\"\ndone\n";
+			shellScript = "set -e\n\npython \"$SRCROOT/IPython Notebook/build-support/rewrite-dylib.py\" \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/\nfor i in \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH\"/*.{dylib,framework} \"$BUILT_PRODUCTS_DIR/$XPCSERVICES_FOLDER_PATH\"/*.xpc; do\n    codesign -v \"$i\" || codesign $OTHER_CODE_SIGN_FLAGS --force -s \"$CODE_SIGN_IDENTITY\" \"$i\"\ndone\n";
 		};
 		1B28582916D69F59000E80C6 /* Build libfreetype2 */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -919,6 +919,7 @@
 					"$(BUILT_PRODUCTS_DIR)/libpng/lib",
 					"$(BUILT_PRODUCTS_DIR)/libfreetype2/lib",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--timestamp=none";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -940,6 +941,7 @@
 					"$(BUILT_PRODUCTS_DIR)/libpng/lib",
 					"$(BUILT_PRODUCTS_DIR)/libfreetype2/lib",
 				);
+				OTHER_CODE_SIGN_FLAGS = "--timestamp=none";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
