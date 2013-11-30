@@ -138,7 +138,7 @@ pip install "$IPYTHON_DISTRIBUTION"/ipython-*
 # have to load it from the CDN at runtime.
 python <<EOF
 from IPython.external.mathjax import install_mathjax
-install_mathjax()
+install_mathjax(dest="$VIRTUALENV_DIR/lib/python2.7/site-packages/IPython/html/static/mathjax")
 EOF
 
 rsync -aP "$SCRIPT_INPUT_FILE_3"/lib/python2.7/ "$VIRTUALENV_DIR"/lib/python2.7/
