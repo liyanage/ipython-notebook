@@ -11,6 +11,20 @@
 		<language>en</language>
 
 		<item>
+			<title>Version 1.8</title>
+			<sparkle:releaseNotesLink>http://cdn.entropy.ch/software/ipython-notebook/release-notes.html#version-1.8</sparkle:releaseNotesLink>
+			<sparkle:minimumSystemVersion>10.9</sparkle:minimumSystemVersion>
+			<pubDate>Tue, 03 Dec 2013 09:13:11 -0800</pubDate>
+			<enclosure
+				url="http://cdn.entropy.ch/software/ipython-notebook/IPython Notebook 1.8.zip"
+				sparkle:version="1.8"
+				type="application/octet-stream"
+				length="137118701"
+				sparkle:dsaSignature="MCwCFBX/WOaht7vtNL93aEb0Ou+Q7cXWAhQ32TFBqurlKLNXVASqShCJdZ+VbQ=="
+			/>
+		</item>
+
+		<item>
 			<title>Version 1.7</title>
 			<sparkle:releaseNotesLink>http://cdn.entropy.ch/software/ipython-notebook/release-notes.html#version-1.7</sparkle:releaseNotesLink>
 			<sparkle:minimumSystemVersion>10.9</sparkle:minimumSystemVersion>
