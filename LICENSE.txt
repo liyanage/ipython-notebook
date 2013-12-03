@@ -2,7 +2,7 @@ The IPython Notebook Mac app, excluding the icon artwork, is licensed
 under the Simplified BSD License.
 
 If you publish a derived version of this app, you must provide your
-own icon artwork.
+own icon artwork (everything under the "artwork" folder).
 
 Copyright (c) 2013, Marc Liyanage
 All rights reserved.

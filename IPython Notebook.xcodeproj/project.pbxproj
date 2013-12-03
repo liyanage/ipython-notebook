@@ -266,9 +266,9 @@
 		1B4E818E16C8647F00D174F2 /* create-ipython-virtualenv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "create-ipython-virtualenv.sh"; sourceTree = "<group>"; };
 		1B4E81D616C9787100D174F2 /* launch-ipython.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = "launch-ipython.py"; sourceTree = "<group>"; };
 		1B4E81D716C9990E00D174F2 /* mime.types */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mime.types; path = /etc/apache2/mime.types; sourceTree = "<absolute>"; };
-		1B532E2E16D55AB400CB6A0C /* IPython Notebook.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "IPython Notebook.icns"; sourceTree = "<group>"; };
+		1B532E2E16D55AB400CB6A0C /* IPython Notebook.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "IPython Notebook.icns"; path = "artwork/IPython Notebook.icns"; sourceTree = "<group>"; };
 		1B74002416D9B2060014A3BE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/BookmarksViewController.xib; sourceTree = "<group>"; };
-		1B7F41E416E4685800E21851 /* IPython Notebook Document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "IPython Notebook Document.icns"; sourceTree = "<group>"; };
+		1B7F41E416E4685800E21851 /* IPython Notebook Document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = "IPython Notebook Document.icns"; path = "artwork/IPython Notebook Document.icns"; sourceTree = "<group>"; };
 		1B7F41EF16E5187300E21851 /* NotebookWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotebookWindowController.h; sourceTree = "<group>"; };
 		1B7F41F016E5187300E21851 /* NotebookWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotebookWindowController.m; sourceTree = "<group>"; };
 		1B7F41F116E5187300E21851 /* NotebookWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotebookWindowController.xib; sourceTree = "<group>"; };
