@@ -631,6 +631,11 @@
                                     <action selector="runCurrentCellInPlace:" target="-1" id="838"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Clear All Output" keyEquivalent="k" id="3x9-82-cUL">
+                                <connections>
+                                    <action selector="clearAllOutput:" target="-1" id="vPr-ln-EFg"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -677,7 +682,7 @@
             <windowCollectionBehavior key="collectionBehavior" fullScreenAuxiliary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="283" y="305" width="610" height="412"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <value key="minSize" type="size" width="570" height="370"/>
             <view key="contentView" id="563">
                 <rect key="frame" x="0.0" y="0.0" width="610" height="412"/>

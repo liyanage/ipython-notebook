@@ -532,6 +532,9 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 	if ([anItem action] == @selector(runCurrentCellInPlace:)) {
 		return [self currentPageIsNotebook];
 	}
+	if ([anItem action] == @selector(clearAllOutput:)) {
+		return [self currentPageIsNotebook];
+	}
 	if ([anItem action] == @selector(openNotebooksFolder:)) {
 		return self.documentDirectoryURL != nil;
 	}
@@ -616,6 +619,12 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 - (IBAction)runCurrentCellInPlace:(id)sender
 {
 	[self evaluateWebScript:@"IPython.notebook.execute_selected_cell({terminal:true});"];
+}
+
+
+- (IBAction)clearAllOutput:(id)sender
+{
+	[self evaluateWebScript:@"$('li#clear_all_output a').click();"];
 }
 
 
