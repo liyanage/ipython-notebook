@@ -364,8 +364,43 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (void)initializeWebView
 {
-	NSURLRequest *request = [NSURLRequest requestWithURL:self.notebookURL];
+	NSURLRequest *request = [NSURLRequest requestWithURL:[self launchURL]];
 	[[self.webView mainFrame] loadRequest:request];
+}
+
+
+- (NSURL *)launchURL
+{
+	NSString *launchNotebookIdentifier = [self launchNotebookIdentifier];
+	if (!launchNotebookIdentifier) {
+		return self.notebookURL;
+	}
+
+	NSURLComponents *components = [NSURLComponents componentsWithURL:self.notebookURL resolvingAgainstBaseURL:NO];
+	components.path = [NSString stringWithFormat:@"/%@", launchNotebookIdentifier];
+
+	return [components URL];
+}
+
+
+- (NSString *)launchNotebookIdentifier
+{
+	NSString *lastOpenNotebookName = [[NSUserDefaults standardUserDefaults] stringForKey:@"CurrentNotebookName"];
+	if (!lastOpenNotebookName) {
+		return nil;
+	}
+
+	[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"CurrentNotebookName"];
+
+	__block NSString *notebookIdentifier = nil;
+	[[self notebookInfo] enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSDictionary *notebookInfo, BOOL *stop) {
+		if ([notebookInfo[@"name"] isEqualToString:lastOpenNotebookName]) {
+			*stop = YES;
+			notebookIdentifier = key;
+		}
+	}];
+
+	return notebookIdentifier;
 }
 
 
@@ -521,6 +556,10 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
+	NSString *name = [self currentNotebookName];
+	if (name) {
+		[[NSUserDefaults standardUserDefaults] setObject:name forKey:@"CurrentNotebookName"];
+	}
 	self.applicationState = ApplicationStateTerminating;
 	if ([self.task isRunning]) {
 		[self.task terminate];
@@ -846,7 +885,7 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 	if (![self currentPageIsNotebook]) {
 		return;
 	}
-	
+
 	// Disable some menu items that are undesirable in the context of an app or are redundant with the app's menus
 	[self evaluateWebScript:@"$('#new_notebook').parent().children('li').filter(function () {return $.inArray(this.id, ['copy_notebook', 'rename_notebook', 'save_checkpoint']) == -1}).hide();"];
 }
