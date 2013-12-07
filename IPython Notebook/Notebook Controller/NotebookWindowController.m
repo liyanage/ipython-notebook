@@ -9,11 +9,11 @@
 #import "NotebookWindowController.h"
 
 @interface NotebookWindowController ()
-@property (strong) NSTask *task;
-@property (strong) NSURL *documentDirectoryURL;
-@property (strong) NSURL *notebookURL;
-@property (strong) NSArray *deferredNotebookDocumentsToOpen;
-@property (assign) NSUInteger notebookServerStartupCheckCount;
+@property NSTask *task;
+@property NSURL *documentDirectoryURL;
+@property NSURL *notebookURL;
+@property NSArray *deferredNotebookDocumentsToOpen;
+@property NSUInteger notebookServerStartupCheckCount;
 @property (weak) NSOpenPanel *currentOpenDocumentPanel;
 @end
 
@@ -25,7 +25,6 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 - (void)windowDidLoad
 {
 	[super windowDidLoad];
-	
 	[self checkConfiguredDocumentsDirectory];
 }
 
