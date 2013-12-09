@@ -16,6 +16,9 @@ if ! [ -e /usr/local/lib/libgfortran.2.dylib ] ; then
     exit 1
 fi
 
+
+
+
 # This is a temporary directory to install the base tools that
 # we need to build the virtualenv. It is not the virtualenv itself
 # and it is not included in the final product.
@@ -23,6 +26,8 @@ BUILD_PYTHONPATH="$DERIVED_FILE_DIR"/build-python-lib
 export PYTHONPATH="$BUILD_PYTHONPATH"
 export PATH="$BUILD_PYTHONPATH":"$PATH"
 mkdir -p "$BUILD_PYTHONPATH"
+
+
 
 # We need pip and virtualenv to build the virtualenv
 if ! pip freeze >/dev/null 2>&1; then
@@ -60,6 +65,21 @@ if ! [ -e .Python ]; then
     # add other, temporary ones so it finds the libraries also during the build, for unit tests
     install_name_tool -add_rpath "$SCRIPT_INPUT_FILE_1"/lib "$VIRTUALENV_DIR"/bin/python
     install_name_tool -add_rpath "$SCRIPT_INPUT_FILE_2"/lib "$VIRTUALENV_DIR"/bin/python
+fi
+
+if [[ ! -e "$VIRTUALENV_DIR"/bin/pandoc ]]; then
+	PANDOC_DISTRIBUTION="$DERIVED_FILE_DIR"/pandoc
+	mkdir -p "$PANDOC_DISTRIBUTION"
+	pushd "$PANDOC_DISTRIBUTION"
+	curl -L -o "$DERIVED_FILE_DIR"/pandoc.dmg https://pandoc.googlecode.com/files/pandoc-1.12.1-1.dmg
+	mountpoint=$(hdiutil attach "$DERIVED_FILE_DIR"/pandoc.dmg -nobrowse -noautoopen -plist | grep -A1 mount-point | grep string | sed -E 's/\<[^\>]+\>//g')
+	mountpoint=$(echo $mountpoint) # Remove whitespace
+	echo "$image mounted at $mountpoint"
+	gunzip -c "$mountpoint/pandoc-"*.pkg/Contents/Archive.pax.gz | pax -r
+	echo "Unmounting $image"
+	hdiutil detach "$mountpoint"
+	popd
+	cp "$PANDOC_DISTRIBUTION"/usr/local/bin/pandoc "$VIRTUALENV_DIR"/bin/
 fi
 
 
@@ -141,11 +161,12 @@ from IPython.external.mathjax import install_mathjax
 install_mathjax(dest="$VIRTUALENV_DIR/lib/python2.7/site-packages/IPython/html/static/mathjax")
 EOF
 
+# Coyp the opencv python modules into the virtualenv
 rsync -aP "$SCRIPT_INPUT_FILE_3"/lib/python2.7/ "$VIRTUALENV_DIR"/lib/python2.7/
 
 # Rewrite some scripts to make them relocatable, so that
 # users can move around the .app wrapper.
-#"$VIRTUALENV" --relocatable "$VIRTUALENV_DIR"
+"$VIRTUALENV" --relocatable "$VIRTUALENV_DIR"
 
 # Get rid of any .pyc bytecode files.
 find "$VIRTUALENV_DIR" -name '*.pyc' -delete

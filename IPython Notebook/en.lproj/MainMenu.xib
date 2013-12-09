@@ -121,6 +121,12 @@
                                     <action selector="revertDocumentToSaved:" target="-1" id="364"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Export as HTML" keyEquivalent="e" id="uqN-RM-Mzh">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="exportAsHTML:" target="-1" id="eYZ-pt-NbT"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="74">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>

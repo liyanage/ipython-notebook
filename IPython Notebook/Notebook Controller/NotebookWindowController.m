@@ -7,6 +7,7 @@
 //
 
 #import "NotebookWindowController.h"
+#import "NBConversionJob.h"
 
 @interface NotebookWindowController ()
 @property NSTask *task;
@@ -14,6 +15,7 @@
 @property NSURL *notebookURL;
 @property NSArray *deferredNotebookDocumentsToOpen;
 @property NSUInteger notebookServerStartupCheckCount;
+@property NBConversionJob *currentConversionJob;
 @property (weak) NSOpenPanel *currentOpenDocumentPanel;
 @end
 
@@ -535,6 +537,9 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 	if ([anItem action] == @selector(clearAllOutput:)) {
 		return [self currentPageIsNotebook];
 	}
+	if ([anItem action] == @selector(exportAsHTML:)) {
+		return [self currentPageIsNotebook];
+	}
 	if ([anItem action] == @selector(openNotebooksFolder:)) {
 		return self.documentDirectoryURL != nil;
 	}
@@ -601,9 +606,20 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 - (void)promptForUnsavedChangesWithCompletionHandler:(alertCompletionHandler)completionHandler
 {
 	NSAlert *alert = [[NSAlert alloc] init];
-	alert.messageText = NSLocalizedString(@"You have unsaved notebook documents. Do you want to save your changes?", nil);
+	alert.messageText = NSLocalizedString(@"This notebook document has unsaved changes. Do you want to save them?", nil);
 	[alert addButtonWithTitle:NSLocalizedString(@"Save", nil)];
 	[alert addButtonWithTitle:NSLocalizedString(@"Discard Changes", nil)];
+	[alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+	[alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:(void *)CFBridgingRetain(completionHandler)];
+}
+
+
+- (void)promptForUnsavedChangesForExportWithCompletionHandler:(alertCompletionHandler)completionHandler
+{
+	NSAlert *alert = [[NSAlert alloc] init];
+	alert.messageText = NSLocalizedString(@"This notebook document has unsaved changes that will not appear in the exported document. Do you want to save them before exporting?", nil);
+	[alert addButtonWithTitle:NSLocalizedString(@"Save", nil)];
+	[alert addButtonWithTitle:NSLocalizedString(@"Ignore Changes", nil)];
 	[alert addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
 	[alert beginSheetModalForWindow:self.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:(void *)CFBridgingRetain(completionHandler)];
 }
@@ -625,6 +641,58 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 - (IBAction)clearAllOutput:(id)sender
 {
 	[self evaluateWebScript:@"$('li#clear_all_output a').click();"];
+}
+
+
+- (IBAction)exportAsHTML:(id)sender
+{
+	if ([self currentPageIsNotebookWithUnsavedChanges]) {
+		alertCompletionHandler handler = ^(NSInteger returnCode) {
+			if (returnCode == NSAlertThirdButtonReturn) {
+				return;
+			}
+
+			if (returnCode == NSAlertFirstButtonReturn) {
+				[self saveCurrentNotebook];
+			}
+
+			[self exportCurrentNotebookAsHTML];
+		};
+		[self promptForUnsavedChangesForExportWithCompletionHandler:handler];
+	} else if ([self currentPageIsNotebook]) {
+		[self exportCurrentNotebookAsHTML];
+	}
+}
+
+
+- (void)exportCurrentNotebookAsHTML
+{
+	NSSavePanel *savePanel = [NSSavePanel savePanel];
+
+	NSURL *documentURL = [self currentNotebookFileURL];
+	NSString *defaultFilename = [[[documentURL lastPathComponent] stringByDeletingPathExtension] stringByAppendingPathExtension:@"html"];
+	[savePanel setNameFieldStringValue:defaultFilename];
+
+	[savePanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
+		if (NSFileHandlingPanelOKButton == NSFileHandlingPanelCancelButton) {
+			return;
+		}
+		[self startExportCurrentNotebookAsHTMLToURL:[savePanel URL]];
+	}];
+}
+
+
+- (void)startExportCurrentNotebookAsHTMLToURL:(NSURL *)destinationURL
+{
+	NSURL *documentURL = [self currentNotebookFileURL];
+	self.currentConversionJob = [NBConversionJob conversionJobWithInputDocumentURL:documentURL destinationURL:destinationURL];
+	[self.currentConversionJob startWithCompletionHandler:^{
+		if (self.currentConversionJob.state == JobStateCompletedWithFailure) {
+			NSAlert *alert = [NSAlert alertWithError:self.currentConversionJob.error];
+			[alert beginSheetModalForWindow:self.window completionHandler:nil];
+		}
+		self.currentConversionJob = nil;
+	}];
 }
 
 

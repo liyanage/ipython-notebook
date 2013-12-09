@@ -77,6 +77,8 @@
 		1B28585A16D6B8D0000E80C6 /* libfreetype.6.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B28585516D6B89B000E80C6 /* libfreetype.6.dylib */; };
 		1B28585B16D6B8D3000E80C6 /* libfreetype.dylib in Embed frameworks */ = {isa = PBXBuildFile; fileRef = 1B28585616D6B89B000E80C6 /* libfreetype.dylib */; };
 		1B28585E16D6C01E000E80C6 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B28585C16D6C01E000E80C6 /* Credits.rtf */; };
+		1B2C55ED1853D1F800260352 /* launch-ipython-nbconvert.py in Copy additional virtualenv content */ = {isa = PBXBuildFile; fileRef = 1B2C55EB1853D1BB00260352 /* launch-ipython-nbconvert.py */; };
+		1B2C55F01854E89900260352 /* NBConversionJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2C55EF1854E89900260352 /* NBConversionJob.m */; };
 		1B355BF816DDB742001C25E4 /* com.andymatuschak.Sparkle.SandboxService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 1BB34DBF16DC8DF800E5F0B7 /* com.andymatuschak.Sparkle.SandboxService.xpc */; };
 		1B355C0516DDE6B6001C25E4 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 1B355C0416DDE6B6001C25E4 /* dsa_pub.pem */; };
 		1B40505516C2036400AC636C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B40505416C2036400AC636C /* Cocoa.framework */; };
@@ -230,6 +232,7 @@
 			dstSubfolderSpec = 7;
 			files = (
 				1BBB91FF16D3E11F00A1933A /* launch-ipython.py in Copy additional virtualenv content */,
+				1B2C55ED1853D1F800260352 /* launch-ipython-nbconvert.py in Copy additional virtualenv content */,
 			);
 			name = "Copy additional virtualenv content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +246,9 @@
 		1B28585516D6B89B000E80C6 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = libfreetype2/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
 		1B28585616D6B89B000E80C6 /* libfreetype.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.dylib; path = libfreetype2/lib/libfreetype.dylib; sourceTree = "<group>"; };
 		1B28585D16D6C01E000E80C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		1B2C55EB1853D1BB00260352 /* launch-ipython-nbconvert.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = "launch-ipython-nbconvert.py"; sourceTree = "<group>"; };
+		1B2C55EE1854E89900260352 /* NBConversionJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBConversionJob.h; sourceTree = "<group>"; };
+		1B2C55EF1854E89900260352 /* NBConversionJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBConversionJob.m; sourceTree = "<group>"; };
 		1B3282EE16D9B91900858362 /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		1B355BFC16DDD834001C25E4 /* package-distribution.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "package-distribution.sh"; sourceTree = "<group>"; };
 		1B355C0416DDE6B6001C25E4 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
@@ -367,6 +373,7 @@
 				1B40506916C2036500AC636C /* MainMenu.xib */,
 				1B40507616C2054900AC636C /* IPython Notebook.entitlements */,
 				1B4E81D616C9787100D174F2 /* launch-ipython.py */,
+				1B2C55EB1853D1BB00260352 /* launch-ipython-nbconvert.py */,
 				1B4E81D716C9990E00D174F2 /* mime.types */,
 				1B40505B16C2036400AC636C /* Supporting Files */,
 				1BF40D8C16D5F85D00D4FDEB /* build-support */,
@@ -399,6 +406,8 @@
 				1BA33C1916E9103A002BB23D /* PerformCloseInterceptingView.h */,
 				1BA33C1A16E9103A002BB23D /* PerformCloseInterceptingView.m */,
 				1B7F41F116E5187300E21851 /* NotebookWindowController.xib */,
+				1B2C55EE1854E89900260352 /* NBConversionJob.h */,
+				1B2C55EF1854E89900260352 /* NBConversionJob.m */,
 			);
 			path = "Notebook Controller";
 			sourceTree = "<group>";
@@ -602,7 +611,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -x\nrsync -aqP \"$SCRIPT_INPUT_FILE_0/\" \"$SCRIPT_OUTPUT_FILE_0/\"\ntouch \"$SCRIPT_OUTPUT_FILE_0/\"\ncodesign $OTHER_CODE_SIGN_FLAGS --force -s \"$CODE_SIGN_IDENTITY\" \"$SCRIPT_OUTPUT_FILE_0/\"bin/python\n";
+			shellScript = "set -x\nrsync -aqP \"$SCRIPT_INPUT_FILE_0/\" \"$SCRIPT_OUTPUT_FILE_0/\"\ntouch \"$SCRIPT_OUTPUT_FILE_0/\"\ncodesign $OTHER_CODE_SIGN_FLAGS --force -s \"$CODE_SIGN_IDENTITY\" \"$SCRIPT_OUTPUT_FILE_0/\"bin/python\ncodesign $OTHER_CODE_SIGN_FLAGS --force -s \"$CODE_SIGN_IDENTITY\" \"$SCRIPT_OUTPUT_FILE_0/\"bin/pandoc\n";
 		};
 		1B10CD8E1820CDFB00E71996 /* dyld-patch and code-sign embedded frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -721,6 +730,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B2C55F01854E89900260352 /* NBConversionJob.m in Sources */,
 				1B0182C416D8608D00D1C925 /* BookmarksViewController.m in Sources */,
 				1B40506116C2036400AC636C /* main.m in Sources */,
 				1B40506816C2036400AC636C /* AppDelegate.m in Sources */,
@@ -856,7 +866,7 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.9;
+				CURRENT_PROJECT_VERSION = 1.10;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -889,7 +899,7 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 1.9;
+				CURRENT_PROJECT_VERSION = 1.10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
