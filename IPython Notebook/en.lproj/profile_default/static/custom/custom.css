@@ -1,4 +1,4 @@
-div.code_cell pre, div.code_cell div.prompt {
+div.code_cell pre, div.code_cell div.prompt, div.text_cell_input pre {
     font-family: TheSansMono-Cd5, Menlo;
     font-size: 12px;
 }
