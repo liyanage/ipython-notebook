@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="NotebookWindowController">
             <connections>
                 <outlet property="firstTimeView" destination="7" id="36"/>
+                <outlet property="launchProgressIndicator" destination="9" id="7md-uA-fI1"/>
                 <outlet property="webView" destination="8" id="35"/>
                 <outlet property="window" destination="5" id="30"/>
             </connections>

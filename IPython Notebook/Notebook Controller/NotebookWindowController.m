@@ -338,6 +338,7 @@ typedef void (^alertCompletionHandler)(NSInteger returnCode);
 			if (response) {
 				self.applicationState = ApplicationStateNotebookRunning;
 				self.operationInProgress = NO;
+				[self.launchProgressIndicator removeFromSuperview];
 				[self initializeWebView];
 				[self importDeferredNotebookDocuments];
 				return;
